@@ -1,0 +1,15 @@
+---
+author: emineker
+description: Folyolar
+email: emineker@bil.omu.edu.tr
+url: fo.emineker.net
+domain: emineker.net
+intro: ''
+googleanalytics: ''
+googleplus: '101640452998202884057'
+brand: default
+landslide: /usr/bin/landslide
+css: _/default.css
+js: _/default.js
+indextemplate: _/index.erb
+foliotemplate: _/default.erb
