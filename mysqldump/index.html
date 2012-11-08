@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta id="viewport" name="viewport" content="user-scalable=no" />
-    <title>Yaz&#305;l&#305;m Gereksinim D&ouml;k&uuml;man&#305;</title>
+    <title>Mysqldump</title>
     <!-- Styles -->
     
     <style type="text/css" media="print">
@@ -1747,18 +1747,17 @@ div.slide .inner table tr td:first-child {
     </div>
     <div class="slides">
       
-      <!-- slide source: ygs/index.md -->
+      <!-- slide source: /home/emineker/git/fo/mysqldump/index.md -->
       <div class="slide-wrapper">
         <div class="slide first">
           <div class="inner">
             
-            <header><h1>Yaz&#305;l&#305;m Gereksinim D&ouml;k&uuml;man&#305;</h1></header>
+            <header><h1>Mysqldump</h1></header>
             
             
-            <section><p>Kan Ba&#287;&#305;&#351;&#305; Merkezi Veritaban&#305; ve Web Portal&#305;</p>
-<p>Nisan 2012</p>
-<p>Emin Eker <code>&lt;emineker@bil.omu.edu.tr&gt;</code></p>
-<p>Dilara Koca <code>&lt;dilara@bil.omu.edu.tr&gt;</code></p></section>
+            <section><p>emineker <code>&lt;emineker@bil.omu.edu.tr&gt;</code></p>
+<p><a href="http://emineker.net/">http://emineker.net/</a></p>
+<p>Kas&#305;m 2012</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1770,47 +1769,175 @@ div.slide .inner table tr td:first-child {
           <footer>
             
             <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
+              Source: <a href="/home/emineker/git/fo/mysqldump/index.md">/home/emineker/git/fo/mysqldump/index.md</a>
             </aside>
             
             <aside class="page_number">
-              1/16
+              1/11
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: ygs/index.md -->
+      <!-- slide source: /home/emineker/git/fo/mysqldump/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>&#304;&ccedil;indekiler</h1></header>
+            <header><h2>Mysqldump Nedir?</h2></header>
             
             
-            <section><ul>
-<li>
-<p>Giri&#351;</p>
+            <section><p>Mysql veritaban&#305; y&ouml;neticisinde</p>
 <ul>
-<li>Sistemin Amac&#305;</li>
-<li>Sistemin Kapsam&#305;</li>
-<li>Tan&#305;mlar, K&#305;sa Adlar ve K&#305;saltmalar</li>
-<li>Kullan&#305;lacak Teknolojiler</li>
-<li>Genel Bilgiler</li>
+<li>Bir veya birden fazla veritaban&#305;n</li>
+<li>Bir veya birden fazla tablonun</li>
 </ul>
-</li>
-<li>
-<p>Genel A&ccedil;&#305;klama</p>
+<p>yedeklenmesini (d&#305;&#351;ar&#305; aktar&#305;lmas&#305;n&#305;) sa&#287;layan mysql arac&#305;</p>
 <ul>
-<li>Kullan&#305;m Senaryosu Modeli</li>
-<li>Mimari &#350;ema ve Veritaban&#305; Tasar&#305;m&#305;</li>
-<li>Kullan&#305;m Senaryosu Raporlar&#305;</li>
-<li>Ek Gereksinimler</li>
-<li>&#304;&#351;levsel &#304;htiya&ccedil;lar</li>
-<li>Kullan&#305;c&#305; arabirimi &Ouml;zellikleri</li>
+<li>
+<p>Daha ayr&#305;nt&#305;l&#305; bilgilere eri&#351;ebilmek i&ccedil;in (kaynak)</p>
+<div class="highlight"><pre><span class="nv">$ </span>man mysqldump
+</pre></div>
+
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="/home/emineker/git/fo/mysqldump/index.md">/home/emineker/git/fo/mysqldump/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: /home/emineker/git/fo/mysqldump/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Veritaban&#305; Yede&#287;inin Al&#305;nmas&#305;</h2></header>
+            
+            
+            <section><ul>
+<li>
+<p>Yaln&#305;zca bir veritaban&#305; yede&#287;inin al&#305;nmas&#305;</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p db_name &gt; db-name.sql
+</pre></div>
+
+</li>
+<li>
+<p>Yaln&#305;zca se&ccedil;ilen veritabanlar&#305;n&#305;n yede&#287;inin al&#305;nmas&#305;</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p --databases <span class="se">\</span>
+        db_name_1 db_name_2 &gt; databases.sql
+</pre></div>
+
+</li>
+<li>
+<p>T&uuml;m veritaban&#305;n&#305;n yede&#287;inin al&#305;nmas&#305;</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p --all-databases &gt; all-databases.sql
+</pre></div>
+
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="/home/emineker/git/fo/mysqldump/index.md">/home/emineker/git/fo/mysqldump/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: /home/emineker/git/fo/mysqldump/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Tablolar&#305;n Yede&#287;inin Al&#305;nmas&#305;</h2></header>
+            
+            
+            <section><ul>
+<li>
+<p>Bir veritaban&#305; i&ccedil;erisindeki bir tek tablonun yede&#287;inin al&#305;nmas&#305;</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p db_name table_name &gt; table-name.sql
+</pre></div>
+
+</li>
+<li>
+<p>Bir veritaban&#305; i&ccedil;erisindeki birden fazla tablonun yede&#287;inin al&#305;nmas&#305;</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p db_name t_name_1 t_name_2 &gt; tables.sql
+</pre></div>
+
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="/home/emineker/git/fo/mysqldump/index.md">/home/emineker/git/fo/mysqldump/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: /home/emineker/git/fo/mysqldump/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Verisiz Yedek Al&#305;nmas&#305;</h2></header>
+            
+            
+            <section><ul>
+<li>
+<p>T&uuml;m veritabanlar&#305; i&ccedil;in</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p --all-databases --no-data &gt; all-databases.sql
+</pre></div>
+
+</li>
+<li>
+<p>Bir veritaban&#305; i&ccedil;erisinde bir tablo i&ccedil;in</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p db_name table_name --no-data &gt; table-infos.sql
+</pre></div>
+
+</li>
 </ul>
-</li>
-</ul></section>
+<p>Bu &#351;ekilde sadece veritaban&#305; ve tablo bilgileri veya sadece tablo bilgileri yede&#287;i al&#305;nabilir</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1822,151 +1949,44 @@ div.slide .inner table tr td:first-child {
           <footer>
             
             <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
+              Source: <a href="/home/emineker/git/fo/mysqldump/index.md">/home/emineker/git/fo/mysqldump/index.md</a>
             </aside>
             
             <aside class="page_number">
-              2/16
+              5/11
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: ygs/index.md -->
+      <!-- slide source: /home/emineker/git/fo/mysqldump/index.md -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Sistemin Amac&#305;</h1></header>
+            <header><h2>Ge&ccedil;erli Bilgilerinin Silinmesi</h2></header>
             
             
-            <section><ul>
-<li>Kan bankalar&#305;n&#305;n ve hastanelerin yak&#305;n &ccedil;evrede olan ve k&#305;sa zamanda kan ba&#287;&#305;&#351;&#305; yapabilecek ki&#351;ileri bulabilecekleri &ccedil;evrimi&ccedil;i, merkezile&#351;tirilmi&#351; bir web portal&#305; olu&#351;turulmas&#305;.</li>
-<li>
-<p>H&#305;zla de&#287;erlendirmek &uuml;zere kan ba&#287;&#305;&#351;&#305; yapan ki&#351;ilerin sa&#287;l&#305;k raporlar&#305;n&#305;n kayd&#305;n&#305; tutulmas&#305;.</p>
-</li>
-<li>
-<p>Kan ba&#287;&#305;&#351;&#305; merkezi veritaban&#305; ve web portal&#305; kan ba&#287;&#305;&#351;&ccedil;&#305;lar&#305;n&#305;n g&ouml;n&uuml;ll&uuml;l&uuml;kleri ile do&#287;ru orant&#305;l&#305; olarak kan ba&#287;&#305;&#351;lar&#305;n&#305;n kay&#305;t alt&#305;na al&#305;nmas&#305; ve ihtiya&ccedil;lar do&#287;rultusunda (acil durumlarda) sisteme daha &ouml;nceden kay&#305;t yapt&#305;rm&#305;&#351; ve onay olm&#305;&#351; kurumlar taraf&#305;ndan email veya telefon arac&#305;l&#305;&#287;&#305; ile kendilerine an&#305;nda ula&#351;&#305;lmas&#305;n&#305;n sa&#287;lanmas&#305;d&#305;r.</p>
-</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              3/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ygs/index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Sistemin Kapsam&#305;</h1></header>
-            
-            
-            <section><ul>
-<li>&Ouml;ncelikler belirli bir b&ouml;lgeyi kapsayacak bu proje daha sonra t&uuml;m &uuml;lkeye yay&#305;l&#305;p merkezi bir sistem olarak gerekli kurum ve kurulu&#351;lara hizmet sa&#287;layacakt&#305;r.</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              4/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ygs/index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Tan&#305;mlar, K&#305;sa Adlar ve K&#305;saltmalar</h1></header>
-            
-            
-            <section><ul>
-<li>
-<p><strong>Don&ouml;r:</strong> G&ouml;n&uuml;ll&uuml; ka&#287; ba&#287;&#305;&#351;&ccedil;&#305;s&#305;</p>
-</li>
-<li>
-<p><strong>Kurum:</strong> S&uuml;rekli veya acil kan ihtiyac&#305; olan devlet kurumu veya &ouml;zel kurulu&#351;lar (hastaneler, klinikler vb.)</p>
-</li>
-<li>
-<p><strong>Admin:</strong> Sistem y&ouml;neticisi</p>
-</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              5/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ygs/index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Kullan&#305;lacak Teknolojiler</h1></header>
-            
-            
-            <section><ul>
-<li>Proje MySQL veritaban&#305; ve Ruby programlama dili kullan&#305;larak Ruby on Rails web &ccedil;at&#305;s&#305; &uuml;zerinde Linux i&#351;letim sistemi Debian da&#287;&#305;t&#305;m&#305; &uuml;zerinde geli&#351;tirilecektir. Projede ayr&#305;ca Java Script kodlar&#305; da yer yer kullan&#305;lacakt&#305;r.</li>
-<li>Web sunucusu olarak ise Nginx, production bir Rails sistemi &ccedil;al&#305;&#351;t&#305;rabilmek i&ccedil;in de Unicorn Rails sunucusu kullan&#305;lacakt&#305;r.</li>
-<li>
-<p>Proje geli&#351;tiricileri ayr&#305; (benzer) ortamlarda &ccedil;al&#305;&#351;acaklard&#305;r. T&uuml;m geli&#351;tiriciler:</p>
+            <section><p>Yedekleri Mysql&rsquo;e aktarma s&#305;ras&#305;nda veritaban&#305;nda bulunan
+eski veritaban&#305; veya tablolar&#305;n silinmesinin sa&#287;lanmas&#305;</p>
 <ul>
-<li>ruby &gt;= 1.9.2</li>
-<li>rails &gt;= 3.1.0</li>
-<li>Nginx 1.1.17</li>
-<li>MySQL 5.1.61</li>
-<li>unicorn v4.2.0</li>
-<li>imagemacik g&ouml;r&uuml;nt&uuml; i&#351;leme paketi</li>
-</ul>
+<li>
+<p>Veritaban&#305;n&#305;n silinmesi</p>
+<pre><code>!sh
+$ mysql -u root -p db_name &ndash;-add-drop-database &lt; db-name.sql
+</code></pre>
+</li>
+<li>
+<p>Tablonun silinmesi</p>
+<pre><code>!sh
+$ mysql -u root -p db_name -&ndash;add-drop-table &lt; db-name.sql
+</code></pre>
 </li>
 </ul>
-<p>a&ccedil;&#305;k kaynak paketler kullan&#305;lacakt&#305;r.</p>
-<p>Proje geli&#351;tirilme esnas&#305;nda Chromium browser 19.01.1077 &uuml;zerinde &ccedil;al&#305;&#351;&#305;lmal&#305; ve t&uuml;m taray&#305;c&#305;larda test edilmelidir.</p></section>
+<p>Bu parametreler al&#305;nan yede&#287;e <code>drop database</code> ve <code>create database</code> &ouml;zeliklerini ekler.
+Bu &ouml;zellikler yede&#287;in geri y&uuml;klenmesi s&#305;ras&#305;nda Mysql&rsquo;de bulunan
+veritaban&#305; veya tablonun silinmesi ve yedekle gelen bilgiler do&#287;rultusunda
+yeniden y&uuml;klenmesini sa&#287;lar.</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1978,40 +1998,82 @@ div.slide .inner table tr td:first-child {
           <footer>
             
             <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
+              Source: <a href="/home/emineker/git/fo/mysqldump/index.md">/home/emineker/git/fo/mysqldump/index.md</a>
             </aside>
             
             <aside class="page_number">
-              6/16
+              6/11
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: ygs/index.md -->
+      <!-- slide source: /home/emineker/git/fo/mysqldump/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Genel Bilgiler</h1></header>
+            <header><h2>Yede&#287;in Zaman Damgas&#305; &#304;le Al&#305;nmas&#305;</h2></header>
             
             
             <section><ul>
 <li>
-<p>Kan bankalar&#305;n&#305;n ve hastanelerin yak&#305;n &ccedil;evrede olan ve k&#305;sa zamanda kan ba&#287;&#305;&#351;&#305; yapabilecek ki&#351;ileri bulabilecekleri &ccedil;evrimi&ccedil;i, merkezile&#351;tirilmi&#351; bir web portal&#305; olu&#351;turulacak.</p>
+<p>T&uuml;m veritaban&#305;n&#305;n yede&#287;inin al&#305;nmas&#305;</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p --all-databases &gt; <span class="se">\</span>
+        <span class="k">$(</span>date +%Y-%m-%d-%H-%M-%S<span class="k">)</span>.sql
+</pre></div>
+
 </li>
-<li>
-<p>Ayr&#305;ca, h&#305;zla de&#287;erlendirmek &uuml;zere kan ba&#287;&#305;&#351;&#305; yapan ki&#351;ilerin sa&#287;l&#305;k raporlar&#305;n&#305;n kayd&#305;n&#305; tutacakt&#305;r.</p>
-</li>
-<li>
-<p>Kan ba&#287;&#305;&#351;&#305; merkezi veritaban&#305; ve web portal&#305; kan ba&#287;&#305;&#351;&ccedil;&#305;lar&#305;n&#305;n g&ouml;n&uuml;ll&uuml;l&uuml;kleri ile do&#287;ru orant&#305;l&#305; olarak kan ba&#287;&#305;&#351;lar&#305;n&#305;n kay&#305;t alt&#305;na al&#305;nmas&#305; ve ihtiya&ccedil;lar do&#287;rultusunda (acil durumlarda) sisteme daha &ouml;nceden kay&#305;t yapt&#305;rm&#305;&#351; ve onay olm&#305;&#351; kurumlar taraf&#305;ndan email veya telefon arac&#305;l&#305;&#287;&#305; ile kendilerine an&#305;nda ula&#351;&#305;lmas&#305;n&#305; sa&#287;layacakt&#305;r.</p>
-</li>
-</ul>
-<p>Projenin temel &ouml;zellikleri a&#351;a&#287;&#305;da verilmi&#351;tir:</p>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="/home/emineker/git/fo/mysqldump/index.md">/home/emineker/git/fo/mysqldump/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: /home/emineker/git/fo/mysqldump/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Yede&#287;in Paketlenmesi</h2></header>
+            
+            
+            <section><p>Yede&#287;in saklanmas&#305; i&ccedil;in s&#305;k&#305;&#351;t&#305;rma ara&ccedil;lar&#305; kullan&#305;labilir</p>
 <ul>
-<li>Sistemde d&ouml;rt &ccedil;e&#351;it kullan&#305;c&#305; olacakt&#305;r.</li>
-<li>Bunlar; don&ouml;r, misafir, kurum ve y&ouml;netici kullan&#305;c&#305;lar&#305;d&#305;r.</li>
-<li>B&uuml;t&uuml;n kullan&#305;c&#305;lar sisteme kullan&#305;c&#305; ad&#305; ve sifresi ile giri&#351; yapabilecektir.</li>
+<li>
+<p>Yede&#287;in al&#305;nmas&#305;</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p --all-databases &gt; all-databases.sql
+</pre></div>
+
+</li>
+<li>
+<p>tar.gz paketi halinde saklanmas&#305;</p>
+<div class="highlight"><pre><span class="nv">$ </span>tar czvf all-databases.tar.gz all-databases.sql
+</pre></div>
+
+</li>
+<li>
+<p>Ge&ccedil;ici dosyay&#305; sil</p>
+<div class="highlight"><pre><span class="nv">$ </span>rm all-databases.sql
+</pre></div>
+
+</li>
 </ul></section>
             
           </div>
@@ -2024,29 +2086,122 @@ div.slide .inner table tr td:first-child {
           <footer>
             
             <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
+              Source: <a href="/home/emineker/git/fo/mysqldump/index.md">/home/emineker/git/fo/mysqldump/index.md</a>
             </aside>
             
             <aside class="page_number">
-              7/16
+              8/11
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: ygs/index.md -->
+      <!-- slide source: /home/emineker/git/fo/mysqldump/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Sistemin Kulan&#305;c&#305;lar&#305;:</h1></header>
+            <header><h2>Yede&#287;in &#304;&ccedil;e Aktar&#305;lmas&#305;</h2></header>
             
             
             <section><ul>
-<li>Sistem y&ouml;neticisi (bu, merkezi kan bankas&#305; kurumundan bir ki&#351;i ya da genel bir birim olabilir)</li>
-<li>Kan Bankalar&#305;, Hastaneler, Klinikler, vb.</li>
-<li>Kan Ba&#287;&#305;&#351;&ccedil;&#305;lar&#305;</li>
-<li>&Uuml;ye Olmayan Ki&#351;iler</li>
+<li>
+<p>E&#287;er yedek sadece tablo bilgilerinden ve verilerden olu&#351;uyor ise &ouml;ncelikle
+Mysql&rsquo;de bir veritaban&#305; olu&#351;turulmal&#305; ve yedek bu i&#351;lemden sonra i&ccedil;e
+aktar&#305;lmal&#305;d&#305;r</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysql -u root -p new_db_name &lt; db-name.sql
+</pre></div>
+
+</li>
+</ul>
+<p><strong>Not:</strong> Yedek, olu&#351;acak veritaban&#305; bilgisine de sahipse restore i&#351;lemi s&#305;ras&#305;nda
+veritaban&#305; isminin verilmesine gerek yoktur</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="/home/emineker/git/fo/mysqldump/index.md">/home/emineker/git/fo/mysqldump/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: /home/emineker/git/fo/mysqldump/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Yedeklerin Karakter Kodlamas&#305;</h2></header>
+            
+            
+            <section><p>Yedek olu&#351;turulurken, i&ccedil;e aktarma i&#351;lemlerinde karakter problemleri ile
+kar&#351;&#305;la&#351;mamak ad&#305;na yede&#287;in istenilen kodlama &#351;ekline getirilmesi</p>
+<pre><code>    !sh
+    $ mysqldump -u root -p db_name \
+            &ndash;-default-character-set=utf8 &gt; db_name.sql
+</code></pre>
+<p>Yedeklerin geri y&uuml;kleme i&#351;lemleri s&#305;ras&#305;nda karakter problemleri ile
+kar&#351;&#305;la&#351;&#305;ld&#305;&#287;&#305; taktirde</p>
+<pre><code>    !sh
+    $ mysql -u root -p db_name \
+            &ndash;-default-character-set=utf8 &lt; db-name.sql
+</code></pre>
+<p>burada istenilen kodlama se&ccedil;ene&#287;i kullan&#305;labilir</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="/home/emineker/git/fo/mysqldump/index.md">/home/emineker/git/fo/mysqldump/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/11
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: /home/emineker/git/fo/mysqldump/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Tablolar&#305; Kilitleme</h2></header>
+            
+            
+            <section><p>Yede&#287;i al&#305;nan tablolar&#305;n i&ccedil;e aktarma i&#351;lemleri s&#305;ras&#305;nda bu tabloya
+yeni bir kay&#305;t eklenmesini engellemek gerekebilir</p>
+<ul>
+<li>
+<p>Yede&#287;in al&#305;nmas&#305;</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p db_name --add-locks &gt; db_name.sql
+</pre></div>
+
+</li>
+<li>
+<p>&#304;&ccedil;e aktar&#305;lmas&#305;</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysql -u root -p db_name --add-locks &lt; db-name.sql
+</pre></div>
+
+</li>
 </ul></section>
             
           </div>
@@ -2059,279 +2214,11 @@ div.slide .inner table tr td:first-child {
           <footer>
             
             <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
+              Source: <a href="/home/emineker/git/fo/mysqldump/index.md">/home/emineker/git/fo/mysqldump/index.md</a>
             </aside>
             
             <aside class="page_number">
-              8/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ygs/index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Kullan&#305;m Senaryosu Modeli</h1></header>
-            
-            
-            <section><ul>
-<li>Don&ouml;r, sisteme tamamen kendi iste&#287;iyle kay&#305;t olabilir ve sistem &uuml;zerinde bir parolaya sahip olur.</li>
-<li>Ayn&#305; zamanda sistem kullan&#305;c&#305; ad&#305; olacak email adresi ve parolas&#305;yla sisteme giri&#351; yapar.</li>
-<li>Sistemde i&ccedil;erisinde kay&#305;t olurken verdi&#287;i bilgileri d&uuml;zenleyebilir, parolas&#305;n&#305; de&#287;i&#351;tirebilir.</li>
-<li>Don&ouml;r ve kurumlar a&ccedil;&#305;s&#305;ndan &ouml;nemli olan bir di&#287;er fakt&ouml;r kullan&#305;c&#305;n&#305;n sa&#287;l&#305;k bilgileri ve kan verme tarihleridir. Don&ouml;r yine bu bilgileri de g&uuml;ncelleyebilmektedir.</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              9/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ygs/index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Mimari &#350;ema ve Veritaban&#305; Tasar&#305;m&#305;</h1></header>
-            
-            
-            <section><p>Ekte (Raporda) Sunulmu&#351;tur</p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              10/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ygs/index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Kullan&#305;m Senaryosu Raporlar&#305;</h1></header>
-            
-            
-            <section><p>Ekte (Yazl&#305;m Raporunda Kullan&#305;m Klavuzu B&ouml;l&uuml;m&uuml;nde) Sunulmu&#351;tur</p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              11/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ygs/index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>&#304;&#351;levsel &#304;htiya&ccedil;lar 1:</h1></header>
-            
-            
-            <section><ul>
-<li>Sistem y&ouml;neticisinin kan ba&#287;&#305;&#351;&ccedil;&#305;lar&#305;na ili&#351;kin t&uuml;m ayr&#305;nt&#305;lara eri&#351;imi olmal&#305;d&#305;r</li>
-<li>Kan ba&#287;&#305;&#351;&ccedil;&#305;s&#305; i&ccedil;in ki&#351;isel bilgiler doldurulurken, yaln&#305;zca Ad, B&ouml;lge, ileti&#351;im ayr&#305;nt&#305;lar&#305; (telefon numaras&#305; ya da e-posta adresi olabilir) ve kan grubu alanlar&#305;n&#305;n doldurulmas&#305; zorunlu olmal&#305;d&#305;r . Di&#287;er ayr&#305;nt&#305;lar&#305; isteyen alanlar&#305;n doldurulmas&#305; zorunlu k&#305;l&#305;nmamal&#305;d&#305;r. Kan ba&#287;&#305;&#351;&ccedil;&#305;lar&#305;yla ilgili ayr&#305;nt&#305;lar, xml gibi daha az bo&#351; alan olacak &#351;ekilde kaydedilmelidir.</li>
-<li>Kan bankalar&#305;, hastaneler ve benzeri kurumlar, yak&#305;n &ccedil;evrede kan veren ki&#351;ileri arayabilir; ancak arama sonu&ccedil;lar&#305; yaln&#305;zca son 3 ay i&ccedil;inde kan vermemi&#351; olan ki&#351;ileri g&ouml;stermelidir</li>
-<li>Kan ba&#287;&#305;&#351;&#305; yap&#305;ld&#305;ktan sonra gelecekte de ayn&#305; ki&#351;iye ba&#351;vurabilmek i&ccedil;in kan veren ki&#351;ilerden, sa&#287;l&#305;k durumlar&#305;yla ilgili geribildirim sa&#287;lamalar&#305; istenmelidir.</li>
-<li>Web sitesine &uuml;ye olmayan kullan&#305;c&#305;lar, kan ba&#287;&#305;&#351;&ccedil;&#305;lar&#305;yla ilgili hi&ccedil;bir ayr&#305;nt&#305;ya eri&#351;emezler.</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              12/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ygs/index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>&#304;&#351;levsel &#304;htiya&ccedil;lar 2:</h1></header>
-            
-            
-            <section><ul>
-<li>Yaln&#305;zca hastaneler, kan bankalar&#305; ve benzeri kurumlar kan ba&#287;&#305;&#351;&ccedil;&#305;lar&#305;n&#305;n ileti&#351;im bilgilerini (telefon numaras&#305; / e-posta adresi gibi) g&ouml;rebilmelidir</li>
-<li>Kan ba&#287;&#305;&#351;&ccedil;&#305;s&#305;, yaln&#305;zca ad&#305; ve ya&#351;ad&#305;klar&#305; b&ouml;lgeyi g&ouml;rebilmelidir. Herhangi bir kan ba&#287;&#305;&#351;&#305; yard&#305;m&#305; i&ccedil;in ba&#351;ka bir kan ba&#287;&#305;&#351;&ccedil;&#305;s&#305; aramalar&#305; gerekti&#287;inde, bunun i&ccedil;in y&ouml;neticinin yard&#305;m&#305; ve kan ba&#287;&#305;&#351;&ccedil;&#305;s&#305;n&#305;n dolduraca&#287;&#305; bir formla birlikte ge&ccedil;erli bir neden gereklidir.</li>
-<li>Her kan ba&#287;&#305;&#351;&#305;na dayal&#305; olarak, kan veren ki&#351;ilerin akrabalar&#305;, arkada&#351;lar&#305; ve di&#287;er yak&#305;nlar&#305; i&ccedil;in kan gerekmesi durumunda kan ba&#287;&#305;&#351;&ccedil;&#305;lar&#305; taraf&#305;ndan kullan&#305;labilecek bir puan verilir. (Verilen puan, bu kan ba&#287;&#305;&#351;&ccedil;&#305;lar&#305; i&ccedil;in &uuml;ye kan bankalar&#305; taraf&#305;ndan kan bulunmas&#305;nda belirli bir &ouml;ncelik sa&#287;lar)</li>
-<li>&Uuml;ye olmayanlar da herhangi bir kan bankas&#305;nda kan ya da kan ba&#287;&#305;&#351;&ccedil;&#305;s&#305; arayabilir ve ard&#305;ndan cep telefonlar&#305; arac&#305;l&#305;&#287;&#305;yla h&#305;zl&#305;ca kay&#305;t yapt&#305;rabilir ve kan gereksinimlerine ili&#351;kin talep olu&#351;turabilirler.</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              13/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ygs/index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>&#304;&#351;levsel Olmayan &#304;htiya&ccedil;lar:</h1></header>
-            
-            
-            <section><ul>
-<li>Bu uygulamay&#305; bir pazarlama stratejisi olarak kullanarak, Facebook gibi sosyal a&#287;larla ba&#287;lant&#305;land&#305;rmaya &ccedil;al&#305;&#351;&#305;n.</li>
-<li>Sistem, her &uuml;&ccedil; aydan sonra ayn&#305; kan ba&#287;&#305;&#351;&ccedil;&#305;s&#305;n&#305; se&ccedil;mek yerine, her defas&#305;nda farkl&#305; bir ki&#351;iyi se&ccedil;ebilecek kadar ak&#305;ll&#305; olmal&#305;d&#305;r</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              14/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ygs/index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>&#304;ste&#287;e Ba&#287;l&#305; &Ouml;zellikler:</h1></header>
-            
-            
-            <section><ul>
-<li>Sistem, her &uuml;&ccedil; ayl&#305;k d&ouml;nem sonunda ayn&#305; kan ba&#287;&#305;&#351;&ccedil;&#305;s&#305;n&#305; se&ccedil;mek yerine, her defas&#305;nda farkl&#305; bir ki&#351;iyi se&ccedil;ebilecek kadar ak&#305;ll&#305; olmal&#305;d&#305;r</li>
-<li>Ayr&#305;ca, kan ba&#287;&#305;&#351;&ccedil;&#305;lar&#305;n&#305; bilgilendirmek i&ccedil;in kan ba&#287;&#305;&#351;&#305; kampanyalar&#305; d&uuml;zenleyen Rotary klub&uuml; gibi kurumlar&#305;n kat&#305;l&#305;m&#305;n&#305; sa&#287;lay&#305;n</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              15/16
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: ygs/index.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Kullan&#305;c&#305; Arabirimi &Ouml;ncelikleri:</h1></header>
-            
-            
-            <section><ul>
-<li>Profesyonel g&ouml;r&uuml;n&uuml;m ve yap&#305;</li>
-<li>T&uuml;m kay&#305;tlarda d&uuml;&#351;&uuml;k gereksinimli formlar kullan&#305;lmas&#305;</li>
-<li>Taray&#305;c&#305; testi ve IE, NN, Mozila ve FireFox deste&#287;i.</li>
-<li>Sistem y&ouml;neticisineverilerin tablolar halinde sunulmas&#305;</li>
-<li>Raporlar&#305;n .PDF veya di&#287;er herhangi bir bi&ccedil;imde d&#305;&#351;ar&#305; aktar&#305;lmas&#305;</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="ygs/index.md">ygs/index.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              16/16
+              11/11
             </aside>
           </footer>
         </div>
@@ -2346,99 +2233,61 @@ div.slide .inner table tr td:first-child {
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Yaz&#305;l&#305;m Gereksinim D&ouml;k&uuml;man&#305;</a></th>
+        <th><a href="#slide1">Mysqldump</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
-      
-      <tr id="toc-row-2">
-        <th><a href="#slide2">&#304;&ccedil;indekiler</a></th>
-        <td><a href="#slide2">2</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-3">
-        <th><a href="#slide3">Sistemin Amac&#305;</a></th>
-        <td><a href="#slide3">3</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-4">
-        <th><a href="#slide4">Sistemin Kapsam&#305;</a></th>
-        <td><a href="#slide4">4</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-5">
-        <th><a href="#slide5">Tan&#305;mlar, K&#305;sa Adlar ve K&#305;saltmalar</a></th>
-        <td><a href="#slide5">5</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-6">
-        <th><a href="#slide6">Kullan&#305;lacak Teknolojiler</a></th>
-        <td><a href="#slide6">6</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-7">
-        <th><a href="#slide7">Genel Bilgiler</a></th>
-        <td><a href="#slide7">7</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-8">
-        <th><a href="#slide8">Sistemin Kulan&#305;c&#305;lar&#305;:</a></th>
-        <td><a href="#slide8">8</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-9">
-        <th><a href="#slide9">Kullan&#305;m Senaryosu Modeli</a></th>
-        <td><a href="#slide9">9</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-10">
-        <th><a href="#slide10">Mimari &#350;ema ve Veritaban&#305; Tasar&#305;m&#305;</a></th>
-        <td><a href="#slide10">10</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-11">
-        <th><a href="#slide11">Kullan&#305;m Senaryosu Raporlar&#305;</a></th>
-        <td><a href="#slide11">11</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-12">
-        <th><a href="#slide12">&#304;&#351;levsel &#304;htiya&ccedil;lar 1:</a></th>
-        <td><a href="#slide12">12</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-13">
-        <th><a href="#slide13">&#304;&#351;levsel &#304;htiya&ccedil;lar 2:</a></th>
-        <td><a href="#slide13">13</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-14">
-        <th><a href="#slide14">&#304;&#351;levsel Olmayan &#304;htiya&ccedil;lar:</a></th>
-        <td><a href="#slide14">14</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-15">
-        <th><a href="#slide15">&#304;ste&#287;e Ba&#287;l&#305; &Ouml;zellikler:</a></th>
-        <td><a href="#slide15">15</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-16">
-        <th><a href="#slide16">Kullan&#305;c&#305; Arabirimi &Ouml;ncelikleri:</a></th>
-        <td><a href="#slide16">16</a></td>
-      </tr>
+        
+        <tr id="toc-row-2" class="sub">
+          <th><a href="#slide2">Mysqldump Nedir?</a></th>
+          <td><a href="#slide2">2</a></td>
+        </tr>
+        
+        <tr id="toc-row-3" class="sub">
+          <th><a href="#slide3">Veritaban&#305; Yede&#287;inin Al&#305;nmas&#305;</a></th>
+          <td><a href="#slide3">3</a></td>
+        </tr>
+        
+        <tr id="toc-row-4" class="sub">
+          <th><a href="#slide4">Tablolar&#305;n Yede&#287;inin Al&#305;nmas&#305;</a></th>
+          <td><a href="#slide4">4</a></td>
+        </tr>
+        
+        <tr id="toc-row-5" class="sub">
+          <th><a href="#slide5">Verisiz Yedek Al&#305;nmas&#305;</a></th>
+          <td><a href="#slide5">5</a></td>
+        </tr>
+        
+        <tr id="toc-row-6" class="sub">
+          <th><a href="#slide6">Ge&ccedil;erli Bilgilerinin Silinmesi</a></th>
+          <td><a href="#slide6">6</a></td>
+        </tr>
+        
+        <tr id="toc-row-7" class="sub">
+          <th><a href="#slide7">Yede&#287;in Zaman Damgas&#305; &#304;le Al&#305;nmas&#305;</a></th>
+          <td><a href="#slide7">7</a></td>
+        </tr>
+        
+        <tr id="toc-row-8" class="sub">
+          <th><a href="#slide8">Yede&#287;in Paketlenmesi</a></th>
+          <td><a href="#slide8">8</a></td>
+        </tr>
+        
+        <tr id="toc-row-9" class="sub">
+          <th><a href="#slide9">Yede&#287;in &#304;&ccedil;e Aktar&#305;lmas&#305;</a></th>
+          <td><a href="#slide9">9</a></td>
+        </tr>
+        
+        <tr id="toc-row-10" class="sub">
+          <th><a href="#slide10">Yedeklerin Karakter Kodlamas&#305;</a></th>
+          <td><a href="#slide10">10</a></td>
+        </tr>
+        
+        <tr id="toc-row-11" class="sub">
+          <th><a href="#slide11">Tablolar&#305; Kilitleme</a></th>
+          <td><a href="#slide11">11</a></td>
+        </tr>
+        
       
       
     </table>
