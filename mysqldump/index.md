@@ -76,7 +76,7 @@ Bu şekilde sadece veritabanı ve tablo bilgileri veya sadece tablo bilgileri ye
 
 ---
 
-##  Geçerli Bilgilerinin Silinmesi
+##  Geçerli Bilgilerin Silinmesi
 
 Yedekleri Mysql'e aktarma sırasında veritabanında bulunan
 eski veritabanı veya tabloların silinmesinin sağlanması
