@@ -76,6 +76,25 @@ Bu şekilde sadece veritabanı ve tablo bilgileri veya sadece tablo bilgileri ye
 
 ---
 
+##  Sadece Veri Yedeğinin Alınması
+
+Tablo bilgisi olmadan sadece var olan kayıtlarının yedeğinin alınması
+
+*   Tüm veritabanları için
+
+        !sh
+        $ mysqldump -u root -p --all-databases --no-create-info > all-databases.sql
+
+*   Bir veritabanı içerisinde bir tablo için
+
+        !sh
+        $ mysqldump -u root -p db_name table_name --no-create-info > table-infos.sql
+
+Bu şekilde veritabanı ve tablo bilgileri veya tablo bilgileri
+olmadan verilerin yedekleri alınabilir
+
+---
+
 ##  Geçerli Bilgilerin Silinmesi
 
 Yedekleri Mysql'e aktarma sırasında veritabanında bulunan

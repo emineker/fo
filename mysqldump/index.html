@@ -1774,7 +1774,7 @@ div.slide table:not(.highlighttable) tr td:first-child {
             </aside>
             
             <aside class="page_number">
-              1/11
+              1/12
             </aside>
           </footer>
         </div>
@@ -1817,7 +1817,7 @@ div.slide table:not(.highlighttable) tr td:first-child {
             </aside>
             
             <aside class="page_number">
-              2/11
+              2/12
             </aside>
           </footer>
         </div>
@@ -1867,7 +1867,7 @@ div.slide table:not(.highlighttable) tr td:first-child {
             </aside>
             
             <aside class="page_number">
-              3/11
+              3/12
             </aside>
           </footer>
         </div>
@@ -1910,7 +1910,7 @@ div.slide table:not(.highlighttable) tr td:first-child {
             </aside>
             
             <aside class="page_number">
-              4/11
+              4/12
             </aside>
           </footer>
         </div>
@@ -1954,7 +1954,53 @@ div.slide table:not(.highlighttable) tr td:first-child {
             </aside>
             
             <aside class="page_number">
-              5/11
+              5/12
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: mysqldump/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Sadece Veri Yede&#287;inin Al&#305;nmas&#305;</h2></header>
+            
+            
+            <section><p>Tablo bilgisi olmadan sadece var olan kay&#305;tlar&#305;n&#305;n yede&#287;inin al&#305;nmas&#305;</p>
+<ul>
+<li>
+<p>T&uuml;m veritabanlar&#305; i&ccedil;in</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p --all-databases --no-create-info &gt; all-databases.sql
+</pre></div>
+
+</li>
+<li>
+<p>Bir veritaban&#305; i&ccedil;erisinde bir tablo i&ccedil;in</p>
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p db_name table_name --no-create-info &gt; table-infos.sql
+</pre></div>
+
+</li>
+</ul>
+<p>Bu &#351;ekilde veritaban&#305; ve tablo bilgileri veya tablo bilgileri
+olmadan verilerin yedekleri al&#305;nabilir</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="mysqldump/index.md">mysqldump/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/12
             </aside>
           </footer>
         </div>
@@ -2003,7 +2049,7 @@ yeniden y&uuml;klenmesini sa&#287;lar.</p></section>
             </aside>
             
             <aside class="page_number">
-              6/11
+              7/12
             </aside>
           </footer>
         </div>
@@ -2041,7 +2087,7 @@ yeniden y&uuml;klenmesini sa&#287;lar.</p></section>
             </aside>
             
             <aside class="page_number">
-              7/11
+              8/12
             </aside>
           </footer>
         </div>
@@ -2091,7 +2137,7 @@ yeniden y&uuml;klenmesini sa&#287;lar.</p></section>
             </aside>
             
             <aside class="page_number">
-              8/11
+              9/12
             </aside>
           </footer>
         </div>
@@ -2132,7 +2178,7 @@ veritaban&#305; isminin verilmesine gerek yoktur</p></section>
             </aside>
             
             <aside class="page_number">
-              9/11
+              10/12
             </aside>
           </footer>
         </div>
@@ -2174,7 +2220,7 @@ kar&#351;&#305;la&#351;&#305;ld&#305;&#287;&#305; taktirde</p>
             </aside>
             
             <aside class="page_number">
-              10/11
+              11/12
             </aside>
           </footer>
         </div>
@@ -2219,7 +2265,7 @@ yeni bir kay&#305;t eklenmesini engellemek gerekebilir</p>
             </aside>
             
             <aside class="page_number">
-              11/11
+              12/12
             </aside>
           </footer>
         </div>
@@ -2260,33 +2306,38 @@ yeni bir kay&#305;t eklenmesini engellemek gerekebilir</p>
         </tr>
         
         <tr id="toc-row-6" class="sub">
-          <th><a href="#slide6">Ge&ccedil;erli Bilgilerin Silinmesi</a></th>
+          <th><a href="#slide6">Sadece Veri Yede&#287;inin Al&#305;nmas&#305;</a></th>
           <td><a href="#slide6">6</a></td>
         </tr>
         
         <tr id="toc-row-7" class="sub">
-          <th><a href="#slide7">Yede&#287;in Zaman Damgas&#305; &#304;le Al&#305;nmas&#305;</a></th>
+          <th><a href="#slide7">Ge&ccedil;erli Bilgilerin Silinmesi</a></th>
           <td><a href="#slide7">7</a></td>
         </tr>
         
         <tr id="toc-row-8" class="sub">
-          <th><a href="#slide8">Yede&#287;in Paketlenmesi</a></th>
+          <th><a href="#slide8">Yede&#287;in Zaman Damgas&#305; &#304;le Al&#305;nmas&#305;</a></th>
           <td><a href="#slide8">8</a></td>
         </tr>
         
         <tr id="toc-row-9" class="sub">
-          <th><a href="#slide9">Yede&#287;in &#304;&ccedil;e Aktar&#305;lmas&#305;</a></th>
+          <th><a href="#slide9">Yede&#287;in Paketlenmesi</a></th>
           <td><a href="#slide9">9</a></td>
         </tr>
         
         <tr id="toc-row-10" class="sub">
-          <th><a href="#slide10">Yedeklerin Karakter Kodlamas&#305;</a></th>
+          <th><a href="#slide10">Yede&#287;in &#304;&ccedil;e Aktar&#305;lmas&#305;</a></th>
           <td><a href="#slide10">10</a></td>
         </tr>
         
         <tr id="toc-row-11" class="sub">
-          <th><a href="#slide11">Tablolar&#305; Kilitleme</a></th>
+          <th><a href="#slide11">Yedeklerin Karakter Kodlamas&#305;</a></th>
           <td><a href="#slide11">11</a></td>
+        </tr>
+        
+        <tr id="toc-row-12" class="sub">
+          <th><a href="#slide12">Tablolar&#305; Kilitleme</a></th>
+          <td><a href="#slide12">12</a></td>
         </tr>
         
       
