@@ -12,7 +12,7 @@ Eylül 2011
 
 ---
 
-##  Sistem Yönetimi & Metin Editörler
+##  Sistem Yönetimi & Metin Editörleri
 
 *   Özellikle linux temelli işletim sistemleri üzerinde çalışılan sunucularda sistemin ve servislerin yönetimi için çeşitli yönetim arayüzleri geliştirilmiştir
 
@@ -23,7 +23,7 @@ Eylül 2011
 *   Bu ve bunun gibi durumların önüne geçmek için metin editörler tercih edilmektedir
 
 
-:   Sistem yöneticileri, sistem ve servislere ilişkin yapılandırma dosyalarını düzenleme/değiştirme gibi işlemlerini daima metin editörler ile yaparlar
+:   Sistem yöneticileri, sistem ve servislere ilişkin yapılandırma dosyalarını düzenleme işlemlerini daima metin editörleri ile yaparlar
 
 ---
 
@@ -62,17 +62,17 @@ Vim
 
 ---
 
-##  Vim Editörünün Temel Özellikleri
+##  Vim Temel Özellikleri
 
 *   Çoklu pencere
 
 *   Çoklu seviyede UNDO mekanizması
 
-*   Sentaks renklendirme
+*   Söz dizimi renklendirme
 
 *   Tampon bellek kullanımı
 
-*   Komut modunda dosya ismi tamamlaması
+*   Komut modunda dosya ismi tamamlama
 
 Vim bu gibi temel özellikleri ile kendisini diğer editörlerden oldukça farklı bir noktaya taşımıştır
 
@@ -80,7 +80,7 @@ Vim bu gibi temel özellikleri ile kendisini diğer editörlerden oldukça farkl
 
 ##  Örnek Çalışma Anı
 
-*   Indent (dile özgü girintileri tanır ve kodu düzenler)
+*   Indent (programlama diline özgü girintileri tanır ve kodu düzenler)
 
 ![vim](media/autoindent.gif)
 
@@ -127,7 +127,7 @@ Vim bu gibi temel özellikleri ile kendisini diğer editörlerden oldukça farkl
 
 ##  Taşınabilir
 
-*   Vim unix geleneğine sahip bir metin editörü demiştik
+Vim unix geleneğine sahip bir metin editörü demiştik
 
 *   Bu, sadece unix vari işletim sistemlerinde çalışabildiği anlamına gelmiyor
 
@@ -135,13 +135,13 @@ Vim bu gibi temel özellikleri ile kendisini diğer editörlerden oldukça farkl
 
 *   Bu yüzden neredeyse tüm işletim sistemleriyle uyumludur
 
-*   Linux, FreeBSD, AmigaOS, Atari MINT, BeOS, DOS, MacOS, NextStep, OS/2, OSF, RiscOS, SGI, UNIX, VMS, WIn16 + Win32 + Win64 gibi
+Linux, FreeBSD, AmigaOS, Atari MINT, BeOS, DOS, MacOS, NextStep, OS/2, OSF, UNIX, VMS + Win32 + Win64 gibi
 
 ---
 
 ##  Kurulum
 
-*   Linux dağıtımlarından bu editöre ulaşmak oldukça kolaydır
+*   Linux dağıtımlarında bu editöre ulaşmak oldukça kolaydır
 
 *   Terminale gidelim ve bu komutu girelim
 
@@ -165,13 +165,13 @@ Vim bu gibi temel özellikleri ile kendisini diğer editörlerden oldukça farkl
             !sh
             $ vi
 
-    *   komutu yardımıyla da vim editörüne erişebilir
-
-    *   vi burada bir alias görevinde
+    komutuyla da vim editörüne ulaşılabilir, vi burada bir alias görevindedir
 
 ---
 
 ##  3 Mod
+
+Vim 3 temel moddan oluşmaktadır
 
 *   insert
 
@@ -197,10 +197,10 @@ Vim bu gibi temel özellikleri ile kendisini diğer editörlerden oldukça farkl
 
 ##  Dosya açmak
 
-*   Bulunduğumuz dizinde index.html adında bir dosya açalım
+*   Bulunduğumuz dizinde `foo.txt` adında bir dosya açalım
 
         !sh
-        $ vim index.html
+        $ vim foo.txt
 
 *   Dosya adını belirtmeden de vim'i açabilir
 
@@ -210,15 +210,13 @@ Vim bu gibi temel özellikleri ile kendisini diğer editörlerden oldukça farkl
 *   Çalıştıktan sonra escape moduna geçip
 
         !sh
-        :w index.html
+        :w foo.txt
 
-komutu ile dosyamızı index.html olarak kaydetmiş oluruz
+komutu ile dosyamızı foo.txt olarak kaydetmiş oluruz
 
 ---
 
 ##  Dosyadan Çıkmak
-
-*   Daima command modda yaparız
 
 Biraz önce vim ile açtığımız index.html dosyasında
 
@@ -274,13 +272,13 @@ Biraz önce vim ile açtığımız index.html dosyasında
 
 ## Sil
 
-*   Karakter karakter silmek için `delete` ve `x` tuşları kullanılabilir
+*   Karakter karakter silmek için `delete` ve `x` tuşları kullanılır
 
-*   Virsual veya Visual-Block modu ile toplu seçimlerimizde de yine bu tuşlar kullanılabilir
+*   Visual veya Visual-Block modu ile toplu seçimlerimizde de yine bu tuşlar kullanılabilir
 
-Önemli olan Vim mantığı üzerinde ellerimizi kaldırmadan hızlı bir şekilde
-çalışmaktır. delete tuşunun görevi silmektir evet ama x vim mantığı üzerine bu
-göreve atanmıştır.
+*   Önemli olan Vim mantığı ile ellerimizi kaldırmadan hızlı bir şekilde çalışmaktır
+
+*   `delete` ile silme işlemini yapabiliriz ama `x` vim üzerinde bu göreve atanmıştır
 
 *   `dd` tuşları ile silmek istediğimiz satırı keserek ortadan kaldırmış oluruz
 
@@ -288,14 +286,16 @@ göreve atanmıştır.
 
 ##  Geri Al
 
-Kesme, kopyalama, yapıştırma, silme gibi yapılan bir çok işlem geri alınmak istendiğinde
+Dosya üzerinde yapılan işlemler geri alınmak istendiğinde
 
 *   command modda
 
         !sh
         :u
 
-*   escape modda `u` tuşu
+*   escape modda
+
+        u
 
 ile dosyanın bir işlem önceki haline dönülebilir
 
@@ -305,7 +305,7 @@ ile dosyanın bir işlem önceki haline dönülebilir
 
 *   imleçler yerine kullanılan `h-j-k-l` tuşları kullanılırken
 
-*   kes - kopyala - yapıştır, sil ve geri işlemleri yapılırken
+*   kes - kopyala - yapıştır, sil ve geri gibi işlemler yapılırken
 
 daima escape modunda olunmalıdır
 
@@ -332,7 +332,7 @@ Birden fazla satır üzerinde işlemler yapılabilir
 
 *   Kes-Kopyala işlemlerinden birisi yapılır
 
-*   Yapıştırmak istenilen yere gelinir ve istenilen şekilde yapıştırılabilir
+*   Yapıştırmak istenilen yere yapıştırılır
 
 ---
 

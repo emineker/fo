@@ -83,12 +83,14 @@ Tablo bilgisi olmadan sadece var olan kayıtlarının yedeğinin alınması
 *   Tüm veritabanları için
 
         !sh
-        $ mysqldump -u root -p --all-databases --no-create-info > all-databases.sql
+        $ mysqldump -u root -p --all-databases --no-create-info > \
+                all-databases.sql
 
 *   Bir veritabanı içerisinde bir tablo için
 
         !sh
-        $ mysqldump -u root -p db_name table_name --no-create-info > table-infos.sql
+        $ mysqldump -u root -p db_name table_name --no-create-info > \
+                table-infos.sql
 
 Bu şekilde veritabanı ve tablo bilgileri veya tablo bilgileri
 olmadan verilerin yedekleri alınabilir
@@ -158,21 +160,21 @@ aktarılmalıdır
         $ mysql -u root -p new_db_name < db-name.sql
 
 
-**Not:** Yedek, oluşacak veritabanı bilgisine de sahipse restore işlemi sırasında
+:   Yedek, oluşacak veritabanı bilgisine de sahipse restore işlemi sırasında
 veritabanı isminin verilmesine gerek yoktur
 
 ---
 
 ##  Yedeklerin Karakter Kodlaması
 
-Yedek oluşturulurken, içe aktarma işlemlerinde karakter problemleri ile
+*   Yedek oluşturulurken, içe aktarma işlemlerinde karakter problemleri ile
 karşılaşmamak adına yedeğin istenilen kodlama şekline getirilmesi
 
         !sh
         $ mysqldump -u root -p db_name \
                 –-default-character-set=utf8 > db_name.sql
 
-Yedeklerin geri yükleme işlemleri sırasında karakter problemleri ile
+*   Yedeklerin geri yükleme işlemleri sırasında karakter problemleri ile
 karşılaşıldığı taktirde
 
         !sh

@@ -1983,13 +1983,15 @@ div.slide table:not(.highlighttable) tr td:first-child {
 <ul>
 <li>
 <p>T&uuml;m veritabanlar&#305; i&ccedil;in</p>
-<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p --all-databases --no-create-info &gt; all-databases.sql
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p --all-databases --no-create-info &gt; <span class="se">\</span>
+        all-databases.sql
 </pre></div>
 
 </li>
 <li>
 <p>Bir veritaban&#305; i&ccedil;erisinde bir tablo i&ccedil;in</p>
-<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p db_name table_name --no-create-info &gt; table-infos.sql
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p db_name table_name --no-create-info &gt; <span class="se">\</span>
+        table-infos.sql
 </pre></div>
 
 </li>
@@ -2172,8 +2174,10 @@ aktar&#305;lmal&#305;d&#305;r</p>
 
 </li>
 </ul>
-<p><strong>Not:</strong> Yedek, olu&#351;acak veritaban&#305; bilgisine de sahipse restore i&#351;lemi s&#305;ras&#305;nda
-veritaban&#305; isminin verilmesine gerek yoktur</p></section>
+<dl>
+<dd>Yedek, olu&#351;acak veritaban&#305; bilgisine de sahipse restore i&#351;lemi s&#305;ras&#305;nda
+veritaban&#305; isminin verilmesine gerek yoktur</dd>
+</dl></section>
             
           </div>
           <div class="presenter_notes">
@@ -2203,18 +2207,24 @@ veritaban&#305; isminin verilmesine gerek yoktur</p></section>
             <header><h2>Yedeklerin Karakter Kodlamas&#305;</h2></header>
             
             
-            <section><p>Yedek olu&#351;turulurken, i&ccedil;e aktarma i&#351;lemlerinde karakter problemleri ile
+            <section><ul>
+<li>
+<p>Yedek olu&#351;turulurken, i&ccedil;e aktarma i&#351;lemlerinde karakter problemleri ile
 kar&#351;&#305;la&#351;mamak ad&#305;na yede&#287;in istenilen kodlama &#351;ekline getirilmesi</p>
-<div class="highlight"><pre>    <span class="nv">$ </span>mysqldump -u root -p db_name <span class="se">\</span>
-            –-default-character-set<span class="o">=</span>utf8 &gt; db_name.sql
+<div class="highlight"><pre><span class="nv">$ </span>mysqldump -u root -p db_name <span class="se">\</span>
+        –-default-character-set<span class="o">=</span>utf8 &gt; db_name.sql
 </pre></div>
 
+</li>
+<li>
 <p>Yedeklerin geri y&uuml;kleme i&#351;lemleri s&#305;ras&#305;nda karakter problemleri ile
 kar&#351;&#305;la&#351;&#305;ld&#305;&#287;&#305; taktirde</p>
-<div class="highlight"><pre>    <span class="nv">$ </span>mysql -u root -p db_name <span class="se">\</span>
-            –-default-character-set<span class="o">=</span>utf8 &lt; db-name.sql
+<div class="highlight"><pre><span class="nv">$ </span>mysql -u root -p db_name <span class="se">\</span>
+        –-default-character-set<span class="o">=</span>utf8 &lt; db-name.sql
 </pre></div>
 
+</li>
+</ul>
 <p>burada istenilen kodlama se&ccedil;ene&#287;i kullan&#305;labilir</p></section>
             
           </div>
