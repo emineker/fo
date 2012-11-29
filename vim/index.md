@@ -12,312 +12,357 @@ Eylül 2011
 
 ---
 
+##  Sistem Yönetimi & Metin Editörler
 
-# Linux Sistem Yönetimi & Text Editörler
+*   Özellikle linux temelli işletim sistemleri üzerinde çalışılan sunucularda sistemin ve servislerin yönetimi için çeşitli yönetim arayüzleri geliştirilmiştir
 
-- Her ne kadar linux sunucularda sistemin ve servislerin yönetimi için çeşitli yönetim arayüzleri geliştirilse de bu grafik arayüzlerin hem sayısı az hemde yetenekleri kısıtlıdır
-- Aynı zamanda aktif servis veren bir sunucu üzerinde sürekli masaüstü ortamı çalışması da sistem kaynaklarının bir bölümü tükettiğinden, bunlar sadece gerektiğinde kullanılırlar
-- Bu nedenle linux sistem yöneticileri çoğunlukla bu ihtiyaçlarını sistem ve servislere ilişkin yapılandırma dosyalarını düzenleme/değiştirme yoluna giderek karşılarlar
+*   Geliştirilen grafik arayüzlerin hem sayısı az hemde yetenekleri kısıtlıdır
 
-Linux sistem yöneticiliğinde, text editörlerine işte bu noktada oldukça ihtiyaç duyulur.
+*   Bu gibi araçları kullanmak aktif servis veren bir sunucunun sistem kaynaklarından gerektiğinden fazla kullanmasına neden olur
+
+*   Bu ve bunun gibi durumların önüne geçmek için metin editörler tercih edilmektedir
+
+
+:   Sistem yöneticileri, sistem ve servislere ilişkin yapılandırma dosyalarını düzenleme/değiştirme gibi işlemlerini daima metin editörler ile yaparlar
 
 ---
 
+##  Vim
 
-# Text Editörlerinin Padişahı: Vim
+*   Temeli Bill Joy tarafından tasarlanan yaşı 30 yılı aşmış Vi editörüdür
 
-- Vim, Bill Joy tarafından tasarlanan yaşı 30 yılı aşmış bir editör olan vi editörünü temel alan çok güçlü bir metin editörüdür. Zaman içerisinde Vi extra özelliklerle güçlendirilmiş ve bugünkü halini almıştır.
+*   Zaman içerisinde Vi extra özelliklerle güçlendirilmiş ve bugünkü halini almıştır
+
+*   Çok güçlü bir metin editörüdür
 
 
-## Vi ile Vim Editörlerinin Farkları Nelerdir?
-
-- Vim editörü vi editörünün geliştirilmiş halidir.
-
-- Vi ile Vim arasındaki farklar sistemdeki /usr/share/vim/vim73/doc/vi_diff.txt dosyasında mevcuttur
+Vi ile Vim editörleri arasındaki farklılıkları kaynak dosyalarından öğrenebilirsiniz
 
         !sh
-        $ cat /usr/share/vim/vim63/doc/vi_diff.txt
-komutu ile dosya içeriğini görebilirsiniz
+        $ cat /usr/share/vim/vimr73/doc/vi_diff.txt
 
 ---
 
+##  Neden Vim?
 
-# Neden Vim?
+*   Linux dağıtımlarında çok fazla metin editörü ve bunların kendilerine ait özellikleri var
 
-- Özellikle linux dağıtımlarında çok fazla metin editörü ve bunların kendilerine has özellikleri var.
-- Bu editörler birbiri ile kıyaslandığında Vim çok gelişmiş bir metin editörüdür.
-- Çünkü birçok işlemi text pencerenizi kapatmadan aynı anda yapmanızı sağlar.
-- Sistem yöneticilerin ve programcıların işlerini oldukça kolaylaştırır.
+*   Bu editörler birbiri ile kıyaslandığında Vim çok gelişmiş bir metin editörüdür
 
-Unix geleneklerine sahip olan Vim özellikle linux sistem yöneticileri ve programcılar tarafından oldukça yaygın kullanılan bir editördür.
-Unix tabanlı hemen hemen her sistemde bulunur.
+*   Sistem yöneticilerin ve programcıların işlerini oldukça kolaylaştırır
 
----
+*   Birçok işlemi metin pencerenizi kapatmadan aynı anda yapmanızı sağlar
 
+Vim
+:   Unix geleneklerine sahip olup
 
-# Vim’in Temel Özellikleri
+    *   Unix tabanlı hemen hemen her sistemde bulunur.
 
-Vim editörünün temel özellikleri
-
-- çoklu seviyede UNDO mekanizması
-- çoklu pencere
-- tampon bellek kullanımı
-- sentaks renklendirme
-- komut modunda dosya ismi tamamlaması
-
-Vim’in bu gibi temel özellikleri ile kendisini diğer editörlerden oldukça ayrı bir noktada tutmaktadır.
+    *   Özellikle linux sistem yöneticileri ve programcılar tarafından oldukça yaygın kullanılır
 
 ---
 
+##  Vim Editörünün Temel Özellikleri
 
-# Örnek Bir Çalışma Anı
+*   Çoklu pencere
 
-- otomatik indent
+*   Çoklu seviyede UNDO mekanizması
+
+*   Sentaks renklendirme
+
+*   Tampon bellek kullanımı
+
+*   Komut modunda dosya ismi tamamlaması
+
+Vim bu gibi temel özellikleri ile kendisini diğer editörlerden oldukça farklı bir noktaya taşımıştır
+
+---
+
+##  Örnek Çalışma Anı
+
+*   Indent (dile özgü girintileri tanır ve kodu düzenler)
 
 ![vim](media/autoindent.gif)
 
-- split
+*   Split (aynı ekran içerisinde birden fazla dosya üzerinde çalışılabilir)
 
 ![vim](media/split.gif)
 
 ---
 
+##  Öğrenme
 
-# Ayrıntı!
+*   Vim alışılması zor bir metin editörü
 
-.fx: dikkat
+*   Bir kere alıştığınızda çalışmanız çok hızlanır
 
-- Vim alışması ve öğrenmesi gerçekten çok sancılı bir metin editörüdür ama alıştıktan sonra, yani içten gelen içgüdü gibi bir hal aldığında (buna `second nature` deniyor, yani ellerinizin siz düşünmeden yaptığı işe odaklanması ve üzerine düşeni yapması) çalışmayı hızlandırıyor.
+*   Alışmak, bir tür içgüdü geliştirmek → "Second Nature"
 
-- Genellikle klavyeyi onparmak kullanan insanların bu editöre alışması biraz daha kolaydır. Bir bilgisayarcı için onparmak herşey demektir.
+*   "Second Nature"?  Ellerinizin siz düşünmeden üzerine düşeni yapması
 
-- Slaytlarda göreceğiniz, asıl üzerinde durulan konu da budur. Klavyenizde sadece belirli bir görevi olan belirli tuşlar vardır `delete ve yön tuşları` gibi. Fakat göreceksiniz ki Vim üzerinde bu tuşların görevleri karakter tuşlarıyla da gerçekleştirilebilmektedir. Bunun nedeni elleri klavyenin üzerinden ayırmamak ve sürekliği sağlamaktır.
+---
 
-- Daha önce Vim unix geleneğine sahip bir text editörü demiştik. Ancak bunu söylemiş olmamız sadece linux işletim sitemlerinde çalıştığı anlamına gelmiyor. Vim tarşınabilir bir programdır. Bu yüzden neredeyse tüm işletim sistemleriyle uyumludur. Linux, FreeBSD, AmigaOS, Atari MINT, BeOS, DOS, MacOS, NextStep, OS/2, OSF, RiscOS, SGI, UNIX, VMS, WIn16 + Win32 + Win64 gibi
+##  Asıl Konu
+
+*   Klavyeyi on parmak kullanan insanların bu editöre alışması daha kolaydır
+
+*   Klavyenizde sadece belirli bir görevi olan belirli tuşlar vardır
+
+        + ctrl
+        + delete
+        + imleçler (yön tuşları)
+
+
+*   Bu tuşların görevleri Vim üzerinde karakter tuşlarıyla da gerçekleştirilebilmektedir
+
+*   Bunun nedeni elleri klavyenin üzerinden ayırmamak ve sürekliği sağlamaktır
+
+---
+
+.fx: correct
+
+*   Bir bilgisayarcı için on parmak herşey demektir
+
+---
+
+##  Taşınabilir
+
+*   Vim unix geleneğine sahip bir metin editörü demiştik
+
+*   Bu, sadece unix vari işletim sistemlerinde çalışabildiği anlamına gelmiyor
+
+*   Vim tarşınabilir bir programdır
+
+*   Bu yüzden neredeyse tüm işletim sistemleriyle uyumludur
+
+*   Linux, FreeBSD, AmigaOS, Atari MINT, BeOS, DOS, MacOS, NextStep, OS/2, OSF, RiscOS, SGI, UNIX, VMS, WIn16 + Win32 + Win64 gibi
+
+---
+
+##  Kurulum
+
+*   Linux dağıtımlarından bu editöre ulaşmak oldukça kolaydır
+
+*   Terminale gidelim ve bu komutu girelim
+
+        !sh
+        $ sudo apt-get install vim
+
+*   Vim editörünü linux dağıtımımıza yüklemiş olduk
+
+---
+
+##  Nasıl Kullanılır?
+
+*   Vim'e erişmek için terminale ismini yazıp çalıştıralım
+
+        !sh
+        $ vim
+
+
+:   Vim Vi’in daha gelişmiş hali demiştik
+
+            !sh
+            $ vi
+
+    *   komutu yardımıyla da vim editörüne erişebilir
+
+    *   vi burada bir alias görevinde
+
+---
+
+##  3 Mod
+
+*   insert
+
+    + dosya üzerinde değişiklikler yapılabilir
+
+    + `i` tuşuna basarak insert yani yazma moduna geçilir
+
+*   escape
+
+    + kısayollar kullanabilir
+
+    + `esc` tuşuna basarak escape moduna geçilir
+
+*   command
+
+    + dosya üzerinde bul/değiştir gibi kısayollar kullanılabilir
+
+    + dosyadan çıkış yapmadan komut satırı işlemlerinin kısmı gerçekleştirilebilir
+
+    + önce `esc` sonra `:` karakteriyle command moda yani komut moduna geçilir
+
+---
+
+##  Dosya açmak
+
+*   Bulunduğumuz dizinde index.html adında bir dosya açalım
+
+        !sh
+        $ vim index.html
+
+*   Dosya adını belirtmeden de vim'i açabilir
+
+        !sh
+        $ vim
+
+*   Çalıştıktan sonra escape moduna geçip
+
+        !sh
+        :w index.html
+
+komutu ile dosyamızı index.html olarak kaydetmiş oluruz
+
+---
+
+##  Dosyadan Çıkmak
+
+*   Daima command modda yaparız
+
+Biraz önce vim ile açtığımız index.html dosyasında
+
+*   düzenleme yaptık ve dosyadan çıkmadan sadece kaydetmek istiyoruz `:w`
+
+*   düzenleme yaptık ve kaydedip çıkmak istiyoruz `:wq`
+
+*   düzenleme yapmadık olduğu gibi çıkmak istiyoruz `:q`
+
+*   düzenleme yaptık ama yaptığımız değişiklikleri kaydetmeden dosyanın ilk halinde çıkmak istiyoruz `:q!`
 
 ---
 
 
-# Vim Metin Editörünü Edinin
+##  İmleçler
 
-- Daha önce de söylediğimiz gibi vim unix geleneklerine sahip bir metin editörüdür.
-- Bu yüzden linux dağıtımlarından bu editöre ulaşmak oldukça kolaydır.
+*   İmleçler (yön tuşları) ile dosya içerisinde ileri-geri ve-veya sağ-sol yaparak ilerlenebilir
 
-Terminale gidelim ve bu komutu girelim:
+*   Vim içerisinde bu görevi `h-j-k-l` tuşları da yapmaktadır
 
-    !sh
-    $ sudo apt-get install vim
+*   Bu tuşların kullanımı editör içerisinde çok hızlı hareket etmeyi sağlar
 
-Vim editörünü linux dağıtımımıza yüklemiş olduk
-
----
-
-
-# Vim’e Nasıl Ulaşılır ?
-
-- Öncelikle Vim’e erişmek için bilindiği gibi terminalden ismi ile çağırıp çalıştırabiliyoruz.
-
-Konsoldan Vim’e
-
-    !sh
-    $ vim
-
-ve
-
-    !sh
-    $ vi
-
-şeklinde ulaşabiliyoruz
-
-Vim’in Vi’in geliştirilmiş hali olduğunu söylemiştik.
-
-Ama yanlış anlaşılmasın biraz önceki vi komutuyla vi metin editörünü çağırmadık.
-
-vi burada bir alias görevinde. vi de bizi vim’e götürecek.
-
----
-
-
-# Vim Kullanımına Giriş
-
-Vim’in escape, insert ve command olmak üzere üç modu vardır.
-
-- insert modu ile dosya üzerinde değişiklikler yapabiliriz.
-
-    Dosya içerisindeyken i tuşuna basarak insert yani yazma moduna geçmiş oluruz
-
-- escape modu ile kısayolları kullanabiliriz.
-
-    Dosya içerisindeyken esc tuşuna basarak escape moduna geçmiş oluruz
-
-- command modu ile de dosyadan çıkış yapmadan komut satırı işlemlerimizin bir kısmını gerçekleştirebiliriz.
-
-    Dosya içerisindeyken önce esc arkasından : işaretiyle command moda yani komut moduna geçmiş oluruz.
-
----
-
-
-# Vim ile Zorunlu Hareketler 1
-
-## Dosya açmak
-
-    !sh
-    $ vim index.html
-
-ile bulunduğumuz dizinde index.html adında bir dosya açtık.
-
-Dosya adını belirtmeden yine terminalden
-
-    !sh
-    $ vim
-
-ile programa giriş yapıp escape modunda
-
-    !sh
-    :w index.html
-
-yazarak da dosyamızı index.html olarak kaydetmiş oluyoruz.
-
----
-
-
-# Vim ile Zorunlu Hareketler 2
-
-## Dosyadan çıkmak
-
-Dosyadan çıkma işlemlerimizi aşağıda da gördüğümüz gibi daima command modda
-yapacağız. Biraz önce vim ile açtığımız index.html dosyasında
-
-- dosyaya çeşitli eklemeler yaptık ve her ihtimale karşı dosyadan çıkmadan sadece kaydetmek istiyoruz bunun için -> :w
-
-- eğer dosya içerisine birşeyler eklediysek kaydedip çıkmak için -> :wq
-
-- eğer dosya içerisinde değişiklik yapmadıysak olduğu gibi çıkmak istiyorsak -> :q
-
-NOT: eğer değişiklik yaptıktan sonra bu komutu verirsek dosyada değişiklikler var mesajını alırız.
-
-- dosya içerisinde yaptığımız değişiklikleri kaydetmeden çıkmak için (yani ilk haline dönmek için) -> :q!
-
----
-
-
-# Yön Tuşlarını Kullanmak
-
-İmleç tuşları yani klavyemizin yöntuşlarıyla dosya içerisinde ileri-geri  veya sağ-sol yaparak ilerleyebiliriz.
-Ancak bu görevi yapan `hjkl` tuşlarını kullanmaya alışırsak editör içerisinde çok daha hızlı hareket edebiliriz.
 
          ^
-	     k	           İpucu: h tuşu soldadır ve sola hareket eder.
-    < h     l >	       l tuşu sağdadır ve sağa hareket eder.
-         j	           j tuşu aşağı yönlü bir ok gibidir.
-         v	           k tuşu yukarı yönlü bir ok gibidir.
-
-tabi ki bu işlemlerin hepsi yine escape modda yapılabilir.
+         k	        k tuşu yukarı yönlü hareket eder
+    < h     l >	        h tuşu sola, l tuşu sağa hareket eder
+         j	        j tuşu aşağı yönlü hereket eder
+         v
 
 ---
 
+##  Kes - Kopyala - Yapıştır
 
-# Dosya İçerisinde Kopyala-Yapıştır
+####  Kes - Kopyala
 
-index.html dosyamız ve bu dosyamızda aşağıdaki gibi kodlarımız olsun:
+*   işlemi yapmak istediğimiz satıra gelip
 
-    !html
-    <div class="landslide">
-        <header><h2>foo</h2></header>
-        <section>
-            <p>su gibi berrak ol evladım!</p>
-        </section>
-    </div>
+    + kesmek için `dd` tuşuna
 
-Dosya içerisindeyken insert modu ile çeşitli eklemeler düzenlemeler yaptık.
+    + kopyalamak için `yy` tuşuna basılır
 
-Arkasından escape moduna geçerek
 
-- kopyalamak istediğimiz satıra gelerek yy tuşuna
-- kesmek istediğimiz satıra gelerek dd tuşuna
+####  Yapıştır
 
-Kopyaladığımız veya kestiğimiz satırları yapıştırmak için ise yapıştırmak istediğimiz satıra gelelim
+*   yapıştırmak istenilen satıra gelip bu satırın
 
-- eğer üzerinde bulunduğumuz satırın bir alt satırına yapıştırmak istiyorsak küçük p tuşuna
-- üzerinde bulunduğumuz satırın bir üzerindeki satıra yapıştırmak için ise büyük P tuşuna basalım (shift + p)
+    + bir alt satırına yapıştırmak için küçük `p` tuşuna
+
+    + bir üst satırına yapıştırmak için büyük `P` tuşuna basılır (shift + p)
+
 
 ---
 
+## Sil
 
-# Visual Mod
+*   Karakter karakter silmek için `delete` ve `x` tuşları kullanılabilir
 
-Visual mod yani görsel mod sayesinde birden fazla satır üzerinde işlemler yapabiliyoruz.
+*   Virsual veya Visual-Block modu ile toplu seçimlerimizde de yine bu tuşlar kullanılabilir
 
-    !python
-    import landslide
+Önemli olan Vim mantığı üzerinde ellerimizi kaldırmadan hızlı bir şekilde
+çalışmaktır. delete tuşunun görevi silmektir evet ama x vim mantığı üzerine bu
+göreve atanmıştır.
 
-    class MyMacro(Macro):
-        def process(self, content, source=None):
-            return content + '<p>hop</p>', ['hop_slide']
-
-    g = generator.Generator(source='slide.md')
-    g.register_macro(MyMacro)
-    print g.render()
-
-örneğin
-
-- yukarıdaki satırda istediğimiz satırın istediğimiz yerine gelerek v tuşuna basalım
-- arkasından yukarı-aşağı ve sağ-sol yön tuşlarıyla istediğimiz bölgeyi seçelim
-
-artık sıra kopyalama veya kesme işleminde bunun için ne yapmamız gerektiğini biliyoruz
-
-- yapıştırmak istediğimiz yere gelip
-
-seçtiğimiz kısmı olduğu gibi yapıştırabiliriz.
+*   `dd` tuşları ile silmek istediğimiz satırı keserek ortadan kaldırmış oluruz
 
 ---
 
+##  Geri Al
 
-# Visual-Block Mod
+Kesme, kopyalama, yapıştırma, silme gibi yapılan bir çok işlem geri alınmak istendiğinde
 
-Visual-Block modun Visual moddan farkı blok seçim yapabilmesidir.
-
-Hemen bir önceki sayfadaki kod üzerinde deneme yapalım.
-
-- Kod üzerine gelip ctrl + v tuş kombinasyonuyla visual-block moduna geçelim
-- Arkasından visual moddaki gibi seçim yapalım
-
-        burda görmemiz gereken farklılık
-        visual moddaki birden fazla satır
-        block halinde seçebilme durumumuzdur
-
-- Visual mod seçeceğimiz satırların tümünü seçmemizi sağlıyordu
-- Visual-block mod ise bize istediğimiz bir grup satırın istediğimiz kısımlarını seçmemizi sağlar
-
----
-
-
-# Dosya Üzerinde Silme ve Geri Alma
-
-### Silme
-
-- Escape modunda iken delete tuşu ile harf harf silebiliriz.
-- Aynı şekilde yine karakter karakter silmek için x tuşu kullanılabilir be kullanılmalıdır.
-- Visual veya Visual-Block modu ile toplu seçimlerimizde yine delete tuşu ile silebiliriz.
-- dd tuşları ile de seçtiğimiz kısmı veya üzerinde bulunduğumuz satırı keserek de ordan kaldırmış oluruz.
-
-
-### Geri alma
-
-sadece silme işlemlerinde değil kopyalama, yapıştırma, kesme gibi bir çok işlemi geri almak istediğinizde
-
-- Önce escape moduna geçip
-- Arkasından command modda
+*   command modda
 
         !sh
         :u
-ile en son işleminizi geri alıp dosyanızı bir işlem önceki haline getirebilirsiniz.
+
+*   escape modda `u` tuşu
+
+ile dosyanın bir işlem önceki haline dönülebilir
 
 ---
 
+.fx: wrong
 
-# Devamı gelecek
+*   imleçler yerine kullanılan `h-j-k-l` tuşları kullanılırken
 
-daha yeni başladık
+*   kes - kopyala - yapıştır, sil ve geri işlemleri yapılırken
+
+daima escape modunda olunmalıdır
+
+---
+
+## Visual Mod
+
+Birden fazla satır üzerinde işlemler yapılabilir
+
+        !python
+        import landslide
+
+        class MyMacro(Macro):
+            def process(self, content, source=None):
+                return content + '<p>hop</p>', ['hop_slide']
+
+        g = generator.Generator(source='slide.md')
+        g.register_macro(MyMacro)
+        print g.render()
+
+*   Yukarıdaki satırlarda istenilen satırın üzerine `v` tuşuna basılır
+
+*   Arkasından imleçler ile istediğimiz bölge seçilir
+
+*   Kes-Kopyala işlemlerinden birisi yapılır
+
+*   Yapıştırmak istenilen yere gelinir ve istenilen şekilde yapıştırılabilir
+
+---
+
+## Visual-Block Mod
+
+*   Visual moddan farkı blok seçim yapılabilmesidir
+
+*   Hemen bir önceki slayttaki kod üzerinde deneme yapalım
+
+*   Satır üzerine gelinir `ctrl + v` tuş kombinasyonuyla `visual-block` moduna geçilir
+
+*   Visual moddaki gibi seçim yapılır
+
+Fark
+:   Visual-Block mod
+
+    * istediğimiz bir grup satırın
+
+    * istediğimiz kısımlarını
+
+    seçmemizi sağlar
+
+---
+
+        !html
+        <div class="landslide">
+            <header><h2>devamı gelecek</h2></header>
+            <section>
+                <p>daha yeni başladık!</p>
+            </section>
+        </div>
 
 
