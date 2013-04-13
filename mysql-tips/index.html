@@ -1785,7 +1785,7 @@ div.slide table:not(.highlighttable) tr td:first-child {
             </aside>
             
             <aside class="page_number">
-              1/7
+              1/8
             </aside>
           </footer>
         </div>
@@ -1802,13 +1802,13 @@ div.slide table:not(.highlighttable) tr td:first-child {
             <section><ul>
 <li>
 <p>A&ccedil;&#305;k olan t&uuml;m s&uuml;re&ccedil;leri g&ouml;ster</p>
-<div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">show</span> <span class="n">processlist</span>
+<div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">show</span> <span class="n">processlist</span><span class="p">;</span>
 </pre></div>
 
 </li>
 <li>
 <p>S&uuml;re&ccedil;leri &ouml;ld&uuml;r</p>
-<div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">kill</span> <span class="n">id_number</span>
+<div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">kill</span> <span class="n">id_number</span><span class="p">;</span>
 </pre></div>
 
 </li>
@@ -1828,7 +1828,7 @@ div.slide table:not(.highlighttable) tr td:first-child {
             </aside>
             
             <aside class="page_number">
-              2/7
+              2/8
             </aside>
           </footer>
         </div>
@@ -1864,7 +1864,7 @@ div.slide table:not(.highlighttable) tr td:first-child {
             </aside>
             
             <aside class="page_number">
-              3/7
+              3/8
             </aside>
           </footer>
         </div>
@@ -1898,7 +1898,7 @@ div.slide table:not(.highlighttable) tr td:first-child {
             </aside>
             
             <aside class="page_number">
-              4/7
+              4/8
             </aside>
           </footer>
         </div>
@@ -1940,7 +1940,7 @@ Tablo ba&#287;lant&#305;lar&#305;n&#305;n korunmas&#305; ad&#305;na bu de&#287;i
             </aside>
             
             <aside class="page_number">
-              5/7
+              5/8
             </aside>
           </footer>
         </div>
@@ -1954,7 +1954,7 @@ Tablo ba&#287;lant&#305;lar&#305;n&#305;n korunmas&#305; ad&#305;na bu de&#287;i
             <header><h2>Tablo Olu&#351;turma A&ccedil;&#305;klamalar&#305;</h2></header>
             
             
-            <section><div class="highlight"><pre>    <span class="n">mysql</span><span class="o">&gt;</span> <span class="k">show</span> <span class="k">create</span> <span class="k">table</span> <span class="k">table_name</span>
+            <section><div class="highlight"><pre>    <span class="n">mysql</span><span class="o">&gt;</span> <span class="k">show</span> <span class="k">create</span> <span class="k">table</span> <span class="k">table_name</span><span class="p">;</span>
 </pre></div>
 </section>
             
@@ -1972,7 +1972,50 @@ Tablo ba&#287;lant&#305;lar&#305;n&#305;n korunmas&#305; ad&#305;na bu de&#287;i
             </aside>
             
             <aside class="page_number">
-              6/7
+              6/8
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: mysql-tips/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Kay&#305;tlar&#305; Kar&#305;&#351;t&#305;r</h2></header>
+            
+            
+            <section><ul>
+<li>
+<p>Kay&#305;tlar&#305; kar&#305;&#351;t&#305;rarak se&ccedil;</p>
+<div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="k">table_name</span> <span class="k">order</span> <span class="k">by</span> <span class="n">rand</span><span class="p">();</span>
+</pre></div>
+
+</li>
+<li>
+<p>Rastgele bir kay&#305;t se&ccedil;</p>
+<div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="k">table_name</span> <span class="k">order</span> <span class="k">by</span> <span class="n">rand</span><span class="p">()</span> <span class="k">limit</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="mysql-tips/index.md">mysql-tips/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/8
             </aside>
           </footer>
         </div>
@@ -2000,7 +2043,7 @@ Tablo ba&#287;lant&#305;lar&#305;n&#305;n korunmas&#305; ad&#305;na bu de&#287;i
             </aside>
             
             <aside class="page_number">
-              7/7
+              8/8
             </aside>
           </footer>
         </div>
@@ -2045,11 +2088,16 @@ Tablo ba&#287;lant&#305;lar&#305;n&#305;n korunmas&#305; ad&#305;na bu de&#287;i
           <td><a href="#slide6">6</a></td>
         </tr>
         
+        <tr id="toc-row-7" class="sub">
+          <th><a href="#slide7">Kay&#305;tlar&#305; Kar&#305;&#351;t&#305;r</a></th>
+          <td><a href="#slide7">7</a></td>
+        </tr>
+        
       
       
-      <tr id="toc-row-7">
-        <th><a href="#slide7">-</a></th>
-        <td><a href="#slide7">7</a></td>
+      <tr id="toc-row-8">
+        <th><a href="#slide8">-</a></th>
+        <td><a href="#slide8">8</a></td>
       </tr>
       
       

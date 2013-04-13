@@ -15,12 +15,12 @@ Nisan 2013
 *   Açık olan tüm süreçleri göster
 
         !sql
-        mysql> show processlist
+        mysql> show processlist;
 
 *   Süreçleri öldür
 
         !sql
-        mysql> kill id_number
+        mysql> kill id_number;
 
 ---
 
@@ -68,7 +68,21 @@ Tablo bağlantılarının korunması adına bu değişikliğin yapılması öner
 ##  Tablo Oluşturma Açıklamaları
 
         !sql
-        mysql> show create table table_name
+        mysql> show create table table_name;
+
+---
+
+##  Kayıtları Karıştır
+
+*   Kayıtları karıştırarak seç
+
+        !sql
+        mysql> select * from table_name order by rand();
+
+*   Rastgele bir kayıt seç
+
+        !sql
+        mysql> select * from table_name order by rand() limit 1;
 
 ---
 
