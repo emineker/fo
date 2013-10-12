@@ -2,11 +2,11 @@
 
 .fx: first
 
-Emin Eker `<emineker@bil.omu.edu.tr>`
+Emin Eker `<emineker@gmail.com>`
 
 [http://emineker.net/](http://emineker.net/)
 
-Eylül 2011
+Ekim 2013
 
 ![vim](media/vim-logo.png)
 
@@ -177,7 +177,7 @@ Vim 3 temel moddan oluşmaktadır
 
     + dosya üzerinde değişiklikler yapılabilir
 
-    + `i` tuşuna basarak insert yani yazma moduna geçilir
+    + `i` tuşuna basarak yazma moduna geçilir
 
 *   escape
 
@@ -195,7 +195,7 @@ Vim 3 temel moddan oluşmaktadır
 
 ---
 
-##  Dosya açmak
+##  Dosya Açmak
 
 *   Bulunduğumuz dizinde `foo.txt` adında bir dosya açalım
 
@@ -216,6 +216,26 @@ komutu ile dosyamızı foo.txt olarak kaydetmiş oluruz
 
 ---
 
+##  Dosya Açmak 2
+
+        !sh
+        $ vim file1 file2
+
+komutu ile aynı anda birden fazla dosya açabilirsiniz. İlk dosya üzerinde işlem yapılacak dosyadır ve belleğe yüklenir. Dosya üzerinde yapılan değişiklikler kaydedildikten sonra `:next` komutuyla bir sonraki, `:prev` komutuyla bir önceki dosyaya geçilebilir.
+
+*   Varolan dosya içeriklerine daha hızlı erişebilmek için:
+
+        !sh
+        $ vim +150 file.txt # dosyayı açar ve imlec 150. satıra gelir
+
+        $ vim +file.txt # dosyayı açar ve imlec son satıra gelir
+
+        $ vim +/foo file.txt # dosyayı açar ve imlec foo yazan ilk satıra gelir
+
+        $ vim -d file1 file2 # birden fazla dosya arasındaki farkları gösterir
+
+---
+
 ##  Dosyadan Çıkmak
 
 Biraz önce vim ile açtığımız index.html dosyasında
@@ -228,8 +248,23 @@ Biraz önce vim ile açtığımız index.html dosyasında
 
 *   düzenleme yaptık ama yaptığımız değişiklikleri kaydetmeden dosyanın ilk halinde çıkmak istiyoruz `:q!`
 
+Dosyaları farklı kaydetmek için
+
+*   `:w file2` komutuyla üzerinde çalışılan dosyayı file2 adında yeni bir dosya olarak kaydeder
+
+*   `:30,55w file2` üzerinde çalışılan dosyanın 30-55. satırlarını file2 adında yeni bir dosya olarak kaydeder
+
 ---
 
+##  insert
+
+*   `i` imlecin bulunduğu yere ekleme yapmak için kullanılır
+*   `a` imlecin bulunduğu yerin sağına ekleme yapmak için kullanılır
+*   `A` imlecin bulunduğu satırın sonuna ekleme yapmak için kullanılır.
+*   `o` imlecin bulunduğu yerin bir alt satırına yeni bir satır eklemek için kullanılır
+*   `O` imlecin bulunduğu yerin bir üst satırına yeni bir satır eklemek için kullanılır
+
+---
 
 ##  İmleçler
 
@@ -245,6 +280,42 @@ Biraz önce vim ile açtığımız index.html dosyasında
     < h     l >	        h tuşu sola, l tuşu sağa hareket eder
          j	        j tuşu aşağı yönlü hereket eder
          v
+
+---
+
+##  Genel Arama
+
+*   `/` ile komut satırına düşülür ve aranmak istenen kelime yazılır
+
+*   `?` ile komut satırına düşülür ve aranmak istenen kelime yazılır
+
+**Kısayol**
+
+*   `*` üzerinde bulunulan kelimeyi ileriye doğru arar
+
+*   `#` üzerinde bulunulan kelimeyi geriye doğru arar
+
+Arama metninin sonuna `\c` eklenmesi aramayı küçük büyük harfe duyarsız kılar
+
+---
+
+##  Satırda Arama
+
+Üzerinde bulunduğunuz satırda:
+
+*   `fx` imleçten sonraki ilk x karakterini bulur
+
+*   `Fx` imleçten önceki ilk x karakterini bulur
+
+*   `tx` imleci bir sonraki x karakterinden önceki ilk karaktere götürür
+
+*   `Tx` imleci Satırdaki bir önceki x karakterinden sonraki karaktere götürür
+
+*   `;` bir önceki arama işlemi ile aynı yönde aramayı tekrarlar
+
+*   `,` bir önceki arama işlemi ile zıt yönde aramayı tekrarlar
+
+Nokta ve noktalı virgülün kullanımı çok hızlı çalışma imkanı sağlar
 
 ---
 
@@ -278,7 +349,7 @@ Biraz önce vim ile açtığımız index.html dosyasında
 
 *   Önemli olan Vim mantığı ile ellerimizi kaldırmadan hızlı bir şekilde çalışmaktır
 
-*   `delete` ile silme işlemini yapabiliriz ama `x` vim üzerinde bu göreve atanmıştır
+*   `delete` ile de silme işlemini yapabiliriz ama `x` vim üzerinde bu göreve atanmıştır
 
 *   `dd` tuşları ile silmek istediğimiz satırı keserek ortadan kaldırmış oluruz
 
@@ -307,7 +378,7 @@ ile dosyanın bir işlem önceki haline dönülebilir
 
 *   kes - kopyala - yapıştır, sil ve geri gibi işlemler yapılırken
 
-daima escape modunda olunmalıdır
+**daima escape modunda olunmalıdır**
 
 ---
 
@@ -357,6 +428,227 @@ Fark
 
 ---
 
+##  Bul ve Değiştir
+
+*   `:s/foo/bar/g` satırdaki foo kelimelerini bar kelimesi ile değiştir
+
+*   `:%s/foo/bar/g` tüm dosyadaki foo kelimelerini bar kelimesi ile değiştir
+
+*   `:%s/foo/bar/gc` yapılacak değişikliklerin önce onay almasını sağlar
+
+*   `:30, 200 s/foo/bar/g` değişikliği 30 ile 200 satırıları arasına uygula
+
+Bul ve değiştir, istenilen bir alanda blok seçimi yapıldıktan sonra da kullanılabilir
+
+---
+
+##  Ortam Değişkenlerinin Belirlenmesi
+
+vim içerisinde standart ayarları kullanabileceğiniz gibi bazen de sadece o ana
+özel davranmasını isteyeceğiniz durumlar olabilir. Bunun için `set` ile vim'in
+istediğiniz gibi davranmasını sağlayabilirsiniz.
+
+*   `:set number/nonumber` satır başlarında numara gözükmesini/gözükmemesini sağlar
+
+*   `:set wrapscan/nowrapscan` aramanın dosya başından devam etmesini sağlar/engeller
+
+---
+
+##  Karakter Büyütme-Küçültme
+
+*   `~` imlecin altındaki harfi büyükse küçük, küçükse büyük harf yapar
+
+*   `guu` satırdaki büyük harfleri küçük harf yapar
+
+*   `gUU` satırdaki küçük harfleri büyük harf yapar
+
+---
+
+##  Uçbirim Komutları
+
+*   `!` gibi dosyadan çıkmadan uçbirim içerisinde verebildiğiniz tüm komutları vim içerisinde vermenize imkan sağlar
+
+*   `:! ls`
+
+*   `:! calendar`
+
+*   `:r! cat foo.txt` şeklinde kullanımında komut çıktısını bulunduğunuz dosyaya yazdırabilirsiniz
+
+---
+
+##  Dosya Geçişi
+
+*   `:e foo.txt` üzerinde çalıştığınız dosyanın bulunduğu dizindeki 'foo.txt' isimli dosyayı açar ve bir önceki dosyayı kapatır.
+
+*   Bu komut çalıştığınız dosyadan bir diğerine hızlı bir şekilde geçmenizi sağlar.
+
+*   Yeni dosyaya geçebilmek için çalıştığınız dosyayı kaydetmiş olmanız gerekir.
+
+*   `:e +250 foo.txt` imlecin açılan yeni dosyada 250. satırda olmasını sağlar
+
+---
+
+##  Kısayollar
+
+*   `:<Tab>` yani iki noktadan sonra tab tuşuna basmanız olası komutları görmenize imkan sağlar
+
+*   `:help` yardım ekranını açar
+
+*   `ctrl+G` dosyanın satır sayısını ve bulunduğunuz satırının yüzdelik dilimini gösterir
+
+*   `:reg` bütün kesme kopyalama yapılmış kelime veya metin parçalarını gösterir
+
+*   `:gf` imlecin üzerinde bulunduğu dosyayı açar
+
+---
+
+##  Kısayollar
+
+*   `ZZ` yapılan değişikleri kayıt ederek açık olan tüm dosyaları kapatır
+
+*   `:e!` yapılan değişiklikleri yok sayarak dosyayı kayıt edilmeden önceki haline döndürür
+
+*   `:bn` önbellekteki bir sonraki dosyayı açar
+
+*   `:bp` önbellekteki bir önceki dosyayı açar
+
+*   `:ls` önbellekteki dosyaları listeler
+
+*   `:cd ..` içinde bulunulan dizinin bir üstündeki dizine geçer
+
+*   `:ju` sosya içerisindeki hareketlerinizin listesi (jump)
+
+*   `:history` dosya içerisinde verdiğiniz komutları listeler
+
+---
+
+##  Kısayollar
+
+*   `H` imleci ekranın en üst satırına götürür
+
+*   `L` imleci ekranın en altındaki satıra götürür
+
+*   `M` imleci ekranın ortasındaki satıra götürür
+
+*   `4H` imleci en üst satırın 4 satır altın götürür
+
+*   `3L` imleci en alt satırın 3 satır üstüne götürür
+
+--
+
+*   `ctrl+f` imleci bir ekran sonraki satıra götürür
+
+*   `ctrl+b` imleci bir ekran önceki satıra götürür
+
+*   `ctrl+u` imleci yarım ekran sonraki satıra götürür
+
+*   `ctrl+d` imleci yarım ekran önceki satıra götürür
+
+---
+
+##  Kısayollar
+
+*   `0` satırın başındaki ilk karaktere götürür
+
+*   `^` satırın başındaki boşluk olmayan ilk karaktere götürür
+
+*   `$` satırın sonuna götürür
+
+*   `(` bulunulan cümlenin başlangıcına götürür
+
+*   `)` bir sonraki cümlenin başlangıcına götürür
+
+*   `{` içinde bulunulan paragrafın başlangıcına götürür
+
+*   `}` bir sonraki paragrafın başlangıcına götürür
+
+---
+
+##  Kısayollar
+
+
+*   `w` bir sonraki kelimenin ilk harfine götürür
+
+*   `e` bir sonraki kelimenin son harfine götürür
+
+*   `b` bir önceki kelimenin ilk harfine götürür
+
+Özellikler
+
+*   Noktalama işaretleri de kelime sayılır
+
+*   Büyük W, E ve B harfleri kullanıldığında noktalama işaretleri kelime sayılmaz
+
+Örnekler
+
+*   `7w` imleci 7 kelime sonraki kelimenin ilk karakterine götürür
+
+*   `4B` imleci 4 kelime önceki kelimenin ilk karakterine götürür
+
+---
+
+##  Kısayollar
+
+*   `c+` bir sonraki satırın sonuna kadar her şeyi silip insert moduna geçer
+
+*   `d+` bir sonraki satırın sonuna kadar her şeyi keser
+
+*   `y+` bir sonraki satırın sonuna kadar her şeyi kopyalar
+
+satır içerisinde
+
+*   `5|` 5. sütuna gider
+
+*   `c5|` 5. sütuna kadar her şeyi siler ve insert moduna geçer
+
+*   `d5|` 5. sütuna kadar her şeyi keser
+
+*   `y5|` 5. sütuna kadar her şeyi kopyalar
+
+---
+
+##  Kısayollar
+
+*   `56G` imleci 56. satıra götürür
+
+*   `:83` ,mleci 83. satıra götürür
+
+*   `G` imleci dosyanın son satırına götürür
+
+*   `gg` imleci dosyanın ilk satırına götürür
+
+*   ` `` ` imleci `G` komutu verilmeden önce durduğu yere geri götürür
+
+---
+
+##  Kısayollar
+
+*   `dfe` imlecin bulunduğu yerden bir sonraki e karakterine dahil (e dahil) olan kısmı siler
+
+*   `ct.` t de f gibi çalışır, tek fark imleci aranan karakterin hemen önüne getirir. `c` ile kullanıldığı için verilen karaktere kadar sildikten sonra insert moduna geçer
+
+*   `cH` imlecin olduğu yerden ekranın başındaki satıra kadar siler ve insert moduna geçer
+
+*   `dw` imleçten sonraki kelimenin başına kadar siler
+
+*   `dH` imlecin olduğu yerden ekranın başındaki satıra kadar siler
+
+*   `yH` imlecin olduğu yerden ekranın başındaki satıra kadar her şeyi kopyalar
+
+*   `cG` dosyanın sonuna kadar her şeyi siliyor ve insert modunda geçer
+
+*   `dG` dosyanın sonuna kadar her şeyi siler
+
+*   `yG` dosyanın sonuna kadar her şeyi kopyalar
+
+*   `cL` ekranın sonuna kadar her şeyi siler ve insert moduna geçer
+
+*   `dL` ekranın sonuna kadar her şeyi keser
+
+*   `yL` ekranın sonuna kadar her şeyi kopyalar
+
+---
+
         !html
         <div class="landslide">
             <header><h2>devamı gelecek</h2></header>
@@ -364,5 +656,4 @@ Fark
                 <p>daha yeni başladık!</p>
             </section>
         </div>
-
 

@@ -2,7 +2,7 @@
 
 .fx: first
 
-Emin Eker `<emineker@bil.omu.edu.tr>`
+Emin Eker `<emineker@gmail.com>`
 
 http://emineker.net/
 
