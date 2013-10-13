@@ -29,7 +29,7 @@ Ekim 2013
 
 ##  Vim
 
-*   Temeli Bill Joy tarafından tasarlanan yaşı 30 yılı aşmış Vi editörüdür
+*   Temeli Bill Joy'un 30 yılı aşmış Vi editörüdür
 
 *   Zaman içerisinde Vi extra özelliklerle güçlendirilmiş ve bugünkü halini almıştır
 
@@ -252,6 +252,8 @@ Dosyaları farklı kaydetmek için
 
 *   `:w file2` komutuyla üzerinde çalışılan dosyayı file2 adında yeni bir dosya olarak kaydeder
 
+*   `:saveas file2` komutuyla üzerinde çalışılan dosyanın file2 adında bir kopyası oluşturulur ve yeni dosyaya geçilir
+
 *   `:30,55w file2` üzerinde çalışılan dosyanın 30-55. satırlarını file2 adında yeni bir dosya olarak kaydeder
 
 ---
@@ -355,20 +357,12 @@ Nokta ve noktalı virgülün kullanımı çok hızlı çalışma imkanı sağlar
 
 ---
 
-##  Geri Al
+##  Geri - İleri Alma
 
-Dosya üzerinde yapılan işlemler geri alınmak istendiğinde
+*   Dosya üzerinde yapılan işlemler geri alınmak istendiğinde komut modunda `:u`
+veya escape modunda sadece `u` tuşuna basarak geri alma işlemi yapılabilir
 
-*   command modda
-
-        !sh
-        :u
-
-*   escape modda
-
-        u
-
-ile dosyanın bir işlem önceki haline dönülebilir
+*   Geri almak yerine ileri almak istiyorsanız `ctrl + r` kombinasyonunu kullanabilirsiniz
 
 ---
 
@@ -454,7 +448,7 @@ istediğiniz gibi davranmasını sağlayabilirsiniz.
 
 ---
 
-##  Karakter Büyütme-Küçültme
+##  Karakter Büyütme - Küçültme
 
 *   `~` imlecin altındaki harfi büyükse küçük, küçükse büyük harf yapar
 
@@ -485,6 +479,58 @@ istediğiniz gibi davranmasını sağlayabilirsiniz.
 *   Yeni dosyaya geçebilmek için çalıştığınız dosyayı kaydetmiş olmanız gerekir.
 
 *   `:e +250 foo.txt` imlecin açılan yeni dosyada 250. satırda olmasını sağlar
+
+---
+
+##  Otomatik Tamamlama
+
+Vim, insert yani yazım modunda iken yazdığınız bir veya birkaç harften sonra
+dosya içerisinde bu harf veya harfler ile başlayan kelimeleri sizin için listeler.
+
+Siz de bu listeden seçim yaparak kelimenin tüm harflerini yazmak zorunda kalmadan
+hızlıca tamamlama yapabilirsiniz
+
+Bunun için `ctrl + n` veya `ctrl + p` tuş kombinasyonları kullanmanız yeterli olacaktır
+
+---
+
+##  Çoklu Seçim - Ortak Ekleme
+
+*   `ctrl + v` ile yapılan blok seçiminden sonra `shift + i` yani büyük I harfine basılarak
+seçilen bölümde yazma moduna geçilir
+
+*   Değişikliğin seçtiğini bloğun sonuna eklenmesini isterseniz
+`ctrl + v` kombinasyonundan sonra `shift + a` yani büyük A harfine basılarak
+yazma moduna geçilir
+
+*   Eklenmek istenen karakterler eklendikten sonra `esc` tuşuna basılır. Sonuç
+    olarak değişikliğin tüm satırlara uygulandığını görebilirsiniz
+
+![vim](media/append-to-many-lines.gif)
+
+---
+
+##  Çalışma Alanı Bölme
+
+Aynı anda iki dosya üzerinde çalışılmak istendiğinde ekranda birden fazla dosya açılabilir
+
+*   Bunun için `:split foo.txt` ile dosya yolunu verdiğiniz foo.txt
+dosyasını yatay olarak üst kısımda açabilirsiniz.
+
+*   Dosyayı dikey olarak sağ tarafta açmak isterseniz `:vsplit foo.txt` komutunu kullanabilirsiniz
+
+Kısayol olarak split yerine `:sp`, vsiplit yerine `:vsp` kullanılabilir
+
+![vim](media/split.gif)
+
+---
+
+##  Otomatik Girintileme
+
+Programcılar için vazgeçilmez bir özellik. Bunun için blok seçimi yaptıktan
+sonra `=` karakterine basmanız yeterli olacaktır
+
+![vim](media/autoindent.gif)
 
 ---
 
@@ -524,6 +570,26 @@ istediğiniz gibi davranmasını sağlayabilirsiniz.
 
 ##  Kısayollar
 
+*   `.` son yapılan işlemi tekrarlar
+
+*   `100ihop` imlecin bulunduğu yere arka arkaya 100 tane hop yazar
+
+*   `3p` kopyalanan karakter kümesini imlecin bulunduğu yere 3 defa yapıştırır
+
+*   `56G` imleci 56. satıra götürür
+
+*   `:83` ,mleci 83. satıra götürür
+
+*   `G` imleci dosyanın son satırına götürür
+
+*   `gg` imleci dosyanın ilk satırına götürür
+
+*   ` `` ` imleci `G` komutu verilmeden önce durduğu yere geri götürür
+
+---
+
+##  Kısayollar
+
 *   `H` imleci ekranın en üst satırına götürür
 
 *   `L` imleci ekranın en altındaki satıra götürür
@@ -551,6 +617,8 @@ istediğiniz gibi davranmasını sağlayabilirsiniz.
 *   `0` satırın başındaki ilk karaktere götürür
 
 *   `^` satırın başındaki boşluk olmayan ilk karaktere götürür
+
+*   `g_` satırın conundaki boşluk olmayan ilk karaktere götürür
 
 *   `$` satırın sonuna götürür
 
@@ -609,20 +677,6 @@ satır içerisinde
 
 ##  Kısayollar
 
-*   `56G` imleci 56. satıra götürür
-
-*   `:83` ,mleci 83. satıra götürür
-
-*   `G` imleci dosyanın son satırına götürür
-
-*   `gg` imleci dosyanın ilk satırına götürür
-
-*   ` `` ` imleci `G` komutu verilmeden önce durduğu yere geri götürür
-
----
-
-##  Kısayollar
-
 *   `dfe` imlecin bulunduğu yerden bir sonraki e karakterine dahil (e dahil) olan kısmı siler
 
 *   `ct.` t de f gibi çalışır, tek fark imleci aranan karakterin hemen önüne getirir. `c` ile kullanıldığı için verilen karaktere kadar sildikten sonra insert moduna geçer
@@ -648,6 +702,12 @@ satır içerisinde
 *   `yL` ekranın sonuna kadar her şeyi kopyalar
 
 ---
+
+##  Kaynaklar
+
+*   http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/
+
+--
 
         !html
         <div class="landslide">
