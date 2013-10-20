@@ -86,5 +86,10 @@ Tablo bağlantılarının korunması adına bu değişikliğin yapılması öner
 
 ---
 
-Devam Edecek...
+##  Parola Değiştir
+
+Yönetme yetkiniz bulunduğu kullanıcı için
+
+        !sql
+        mysql> set password for 'root'@'localhost' = password('new_password');
 
