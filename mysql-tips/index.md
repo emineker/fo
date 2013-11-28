@@ -37,13 +37,13 @@ Nisan 2013
 
 ##  Tablo Temizleme
 
-bir tablonun içeriğini silmek ve tablonun tüm ayarlarını sıfırla
+bir tablonun içeriğini silmek ve tablonun tüm ayarlarını sıfırlamak
 
         !sql
         mysql> truncate table_name;
 
 
-örneğin herhangi bir sütununun `auto_increment` özelliği varsa bu değeri sıfırlar
+örneğin herhangi bir sütununun `auto_increment` özelliği varsa bu değeri öntanımlı değere (yani 1'e) getirir
 
 ---
 
@@ -92,4 +92,21 @@ Yönetme yetkiniz bulunduğu kullanıcı için
 
         !sql
         mysql> set password for 'root'@'localhost' = password('new_password');
+
+
+---
+
+##  MySql Veritabanı
+
+Başlık sizi yanıltmasın `mysql`, üzerinde yönetilen veritabanlarının,
+kullanıcıların vs. bilgilerinin tutulduğu kendi veritabanının adıdır
+
+        !sql
+        mysql> use mysql;
+
+veritabanını seçtikten sonra tabloları ve özelliklerini görüntüleyebilirsiniz
+
+        !sql
+        mysql> show tables;
+
 
